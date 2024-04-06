@@ -9,24 +9,13 @@ from app import mysql
 from database import SessionLocal, Base
 from datetime import datetime, timezone
 from app.models.TextInteractions import UserTextInteractions
+from config import Config
+from api_client import initialize_gemini_pro_model
 # from logger_config import setup_logging
 
 bp = Blueprint('text_processing', __name__, url_prefix='/text')
 
-genai.configure(api_key="AIzaSyBUx2njqnTUtvTmW-Uomv71nntTKE1eHDo")
-
-# setup_logging()
-
-# Set up the model
-generation_config = {
-  "temperature": 0.9,
-  "top_p": 1,
-  "top_k": 1,
-  "max_output_tokens": 2048,
-}
-
-
-model = genai.GenerativeModel(model_name="gemini-pro", generation_config=generation_config)
+model = initialize_gemini_pro_model(Config.API_KEY)
 
 userHistory = {}
 

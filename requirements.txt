@@ -8,4 +8,3 @@ SQLAlchemy
 sqlalchemy-utils
 pymysql
 cryptography
-git+https://github.com/huggingface/transformers

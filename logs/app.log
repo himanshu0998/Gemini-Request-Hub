@@ -320,3 +320,81 @@ CREATE TABLE userimageinteractions (
 2024-04-06 13:09:27,799 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 2024-04-06 13:09:27,800 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-06 13:28:29,086 - INFO - SELECT DATABASE()
+2024-04-06 13:28:29,087 - INFO - [raw sql] {}
+2024-04-06 13:28:29,088 - INFO - SELECT @@sql_mode
+2024-04-06 13:28:29,089 - INFO - [raw sql] {}
+2024-04-06 13:28:29,090 - INFO - SELECT @@lower_case_table_names
+2024-04-06 13:28:29,090 - INFO - [raw sql] {}
+2024-04-06 13:28:29,092 - INFO - BEGIN (implicit)
+2024-04-06 13:28:29,092 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-06 13:28:29,093 - INFO - [raw sql] {}
+2024-04-06 13:28:29,098 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-06 13:28:29,099 - INFO - [raw sql] {}
+2024-04-06 13:28:29,102 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-06 13:28:29,103 - INFO - [raw sql] {}
+2024-04-06 13:28:29,107 - INFO - COMMIT
+2024-04-06 13:28:29,905 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-06 13:28:29,905 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-06 13:28:44,181 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-06 13:28:44,182 - ERROR - error": "Password must be at least 8 characters long, include 1 capital letter, 1 lowercase letter, and 1 number, Response Code: 400
+2024-04-06 13:28:44,183 - INFO - 127.0.0.1 - - [06/Apr/2024 13:28:44] "[31m[1mPOST /auth/signup HTTP/1.1[0m" 400 -
+2024-04-06 13:28:54,735 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 13:28:54,739 - INFO - BEGIN (implicit)
+2024-04-06 13:28:54,741 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 13:28:54,743 - INFO - [generated in 0.00143s] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-06 13:28:54,745 - ERROR - error": "Invalid username or password, Response code: 401
+2024-04-06 13:28:54,747 - INFO - ROLLBACK
+2024-04-06 13:28:54,749 - INFO - 127.0.0.1 - - [06/Apr/2024 13:28:54] "[31m[1mPOST /auth/signin HTTP/1.1[0m" 401 -
+2024-04-06 13:29:12,925 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-06 13:29:12,960 - INFO - BEGIN (implicit)
+2024-04-06 13:29:12,962 - INFO - INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)
+2024-04-06 13:29:12,962 - INFO - [generated in 0.00071s] {'username': 'testUser1', 'password': '$pbkdf2-sha256$29000$5zxnbI0xxhiD0PpfK8UYYw$fkOVyX3aRmmMu99G2mDrYYZxybwOQXFwnHxrExr79.w'}
+2024-04-06 13:29:12,967 - INFO - COMMIT
+2024-04-06 13:29:12,969 - INFO - User Created Successfully!
+2024-04-06 13:29:12,970 - INFO - Request Processed, Response code: 201
+2024-04-06 13:29:12,972 - INFO - 127.0.0.1 - - [06/Apr/2024 13:29:12] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 201 -
+2024-04-06 13:29:19,194 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 13:29:19,195 - INFO - BEGIN (implicit)
+2024-04-06 13:29:19,196 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 13:29:19,197 - INFO - [cached since 24.46s ago] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-06 13:29:19,230 - INFO - Request Processed, Response code: 200
+2024-04-06 13:29:19,231 - INFO - ROLLBACK
+2024-04-06 13:29:19,232 - INFO - 127.0.0.1 - - [06/Apr/2024 13:29:19] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-06 13:29:45,220 - INFO - Request: <Request 'http://localhost:5000/text/prompt' [POST]>
+2024-04-06 13:29:56,159 - INFO - BEGIN (implicit)
+2024-04-06 13:29:56,161 - INFO - INSERT INTO usertextinteractions (username, input_type, input_content, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_content)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-06 13:29:56,162 - INFO - [generated in 0.00120s] {'username': 'testUser1', 'input_type': 'prompt', 'input_content': 'Best Footballer?', 'input_timestamp': datetime.datetime(2024, 4, 6, 17, 29, 45, 222204, tzinfo=datetime.timezone.utc), 'output_content': 'The title of "best footballer" is subjective and can vary depending on individual preferences and criteria. However, based on various factors such as ... (3068 characters truncated) ... and exceptional reading of the game. He spent his entire career at AC Milan, where he won seven Serie A titles and five UEFA Champions League titles.', 'output_timestamp': datetime.datetime(2024, 4, 6, 17, 29, 56, 158675, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-06 13:29:56,165 - INFO - COMMIT
+2024-04-06 13:29:56,168 - INFO - Request Processed, Response code: 200
+2024-04-06 13:29:56,171 - INFO - 127.0.0.1 - - [06/Apr/2024 13:29:56] "POST /text/prompt HTTP/1.1" 200 -
+2024-04-06 13:30:30,207 - INFO - BEGIN (implicit)
+2024-04-06 13:30:30,212 - INFO - INSERT INTO userimageinteractions (username, input_type, input_prompt, input_image, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_prompt)s, %(input_image)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-06 13:30:30,215 - INFO - [generated in 0.00318s] {'username': 'testUser1', 'input_type': 'image', 'input_prompt': 'Describe the image in 50 words', 'input_image': b'\xff\xd8\xff\xe0\x00\x10JFIF\x00\x01\x01\x00\x00\x01\x00\x01\x00\x00\xff\xdb\x00C\x00\x08\x06\x06\x07\x06\x05\x08\x07\x07\x07\t\t\x08\n\x0c\x14\r\x0 ... (197948 characters truncated) ... t\xd6\xc0>\xde\'1\xc6%H\xc4;\x86\xf0\x0eX\xd5\xc9\xfc\xcby\xa5\x98\xdb\x99"b0\x08\x00\x81Ut_\xdf4\xe2BX.1\x93\xd2\xac;\xb1\x93\x96<g\x14\x15c\xff\xd9', 'input_timestamp': datetime.datetime(2024, 4, 6, 17, 30, 25, 903013, tzinfo=datetime.timezone.utc), 'output_content': ' A happy family is walking down a rural road. The parents are carrying their two young children on their backs. The sun is setting, and the sky is a warm, golden color. The family is laughing.', 'output_timestamp': datetime.datetime(2024, 4, 6, 17, 30, 30, 206079, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-06 13:30:30,253 - INFO - COMMIT
+2024-04-06 13:30:30,256 - INFO - Request Processed, Response code: 200
+2024-04-06 13:30:30,257 - INFO - 127.0.0.1 - - [06/Apr/2024 13:30:30] "POST /image/process HTTP/1.1" 200 -
+2024-04-06 13:31:56,099 - INFO - SELECT DATABASE()
+2024-04-06 13:31:56,101 - INFO - [raw sql] {}
+2024-04-06 13:31:56,103 - INFO - SELECT @@sql_mode
+2024-04-06 13:31:56,104 - INFO - [raw sql] {}
+2024-04-06 13:31:56,105 - INFO - SELECT @@lower_case_table_names
+2024-04-06 13:31:56,105 - INFO - [raw sql] {}
+2024-04-06 13:31:56,107 - INFO - BEGIN (implicit)
+2024-04-06 13:31:56,108 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-06 13:31:56,109 - INFO - [raw sql] {}
+2024-04-06 13:31:56,113 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-06 13:31:56,114 - INFO - [raw sql] {}
+2024-04-06 13:31:56,117 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-06 13:31:56,118 - INFO - [raw sql] {}
+2024-04-06 13:31:56,121 - INFO - COMMIT
+2024-04-06 13:31:56,933 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-06 13:31:56,935 - INFO - [33mPress CTRL+C to quit[0m

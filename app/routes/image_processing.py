@@ -10,29 +10,17 @@ from PIL import Image
 from database import SessionLocal, Base
 from datetime import datetime, timezone
 from app.models.ImageInteractions import UserImageInteractions
+from config import Config
+from api_client import initialize_gemini_vision_pro_model
 # from logger_config import setup_logging
 
 bp = Blueprint('image_processing', __name__, url_prefix='/image')
 
-genai.configure(api_key="AIzaSyBUx2njqnTUtvTmW-Uomv71nntTKE1eHDo")
-
-# setup_logging()
-
-# Set up the model
-generation_config = {
-  "temperature": 0.9,
-  "top_p": 1,
-  "top_k": 1,
-  "max_output_tokens": 2048,
-}
-
-
-model = genai.GenerativeModel(model_name="gemini-pro-vision", generation_config=generation_config)
+model = initialize_gemini_vision_pro_model(Config.API_KEY)
 
 @bp.route('/process', methods=['POST'])
 @jwt_required()
 def process_image():
-    
     user_id = get_jwt_identity()
     if 'image' not in request.files:
         logging.error("error\": \"No image file provided, Response Code: 400")
