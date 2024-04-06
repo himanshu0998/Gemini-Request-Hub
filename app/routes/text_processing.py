@@ -10,12 +10,12 @@ from database import SessionLocal, Base
 from datetime import datetime, timezone
 from app.models.TextInteractions import UserTextInteractions
 from config import Config
-from api_client import initialize_gemini_pro_model
+from api_client import initialize_model
 # from logger_config import setup_logging
 
 bp = Blueprint('text_processing', __name__, url_prefix='/text')
 
-model = initialize_gemini_pro_model(Config.API_KEY)
+model = initialize_model('gemini-pro',Config.API_KEY)
 
 userHistory = {}
 

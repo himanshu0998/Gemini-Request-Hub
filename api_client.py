@@ -27,14 +27,8 @@ generation_config = {
     "max_output_tokens": 2048,
     }
     
-def initialize_gemini_pro_model(api_key):
+def initialize_model(model_name,api_key):
     # Initialize and return the Gemini Pro model with the provided API key
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(model_name="gemini-pro", generation_config=generation_config)
-    return model
-
-def initialize_gemini_vision_pro_model(api_key):
-    # Initialize and return the Gemini Vision Pro model with the provided API key
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(model_name="gemini-pro-vision", generation_config=generation_config)
+    model = genai.GenerativeModel(model_name=model_name, generation_config=generation_config)
     return model

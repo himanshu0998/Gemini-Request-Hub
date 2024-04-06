@@ -11,12 +11,12 @@ from database import SessionLocal, Base
 from datetime import datetime, timezone
 from app.models.ImageInteractions import UserImageInteractions
 from config import Config
-from api_client import initialize_gemini_vision_pro_model
+from api_client import initialize_model
 # from logger_config import setup_logging
 
 bp = Blueprint('image_processing', __name__, url_prefix='/image')
 
-model = initialize_gemini_vision_pro_model(Config.API_KEY)
+model = initialize_model("gemini-pro-vision",Config.API_KEY)
 
 @bp.route('/process', methods=['POST'])
 @jwt_required()
