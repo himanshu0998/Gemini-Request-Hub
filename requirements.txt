@@ -5,6 +5,7 @@ passlib==1.7.4
 Werkzeug==2.2.2
 google-generativeai
 SQLAlchemy
+sqlalchemy-utils
 pymysql
 cryptography
 git+https://github.com/huggingface/transformers

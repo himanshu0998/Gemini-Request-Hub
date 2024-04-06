@@ -264,3 +264,59 @@ WHERE users.username = %(username_1)s
 2024-04-06 12:13:26,469 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 2024-04-06 12:13:26,469 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-06 13:09:26,904 - INFO - SELECT DATABASE()
+2024-04-06 13:09:26,907 - INFO - [raw sql] {}
+2024-04-06 13:09:26,909 - INFO - SELECT @@sql_mode
+2024-04-06 13:09:26,911 - INFO - [raw sql] {}
+2024-04-06 13:09:26,913 - INFO - SELECT @@lower_case_table_names
+2024-04-06 13:09:26,915 - INFO - [raw sql] {}
+2024-04-06 13:09:26,918 - INFO - BEGIN (implicit)
+2024-04-06 13:09:26,920 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-06 13:09:26,922 - INFO - [raw sql] {}
+2024-04-06 13:09:26,927 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-06 13:09:26,928 - INFO - [raw sql] {}
+2024-04-06 13:09:26,930 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-06 13:09:26,930 - INFO - [raw sql] {}
+2024-04-06 13:09:26,932 - INFO - 
+CREATE TABLE users (
+	username VARCHAR(50) NOT NULL, 
+	password VARCHAR(200) NOT NULL, 
+	PRIMARY KEY (username), 
+	UNIQUE (username)
+)
+
+
+2024-04-06 13:09:26,935 - INFO - [no key 0.00291s] {}
+2024-04-06 13:09:26,965 - INFO - 
+CREATE TABLE usertextinteractions (
+	username VARCHAR(50) NOT NULL, 
+	input_type VARCHAR(10) NOT NULL, 
+	input_content TEXT NOT NULL, 
+	input_timestamp DATETIME NOT NULL, 
+	output_content TEXT NOT NULL, 
+	output_timestamp DATETIME NOT NULL, 
+	status VARCHAR(10) NOT NULL, 
+	PRIMARY KEY (username, input_timestamp)
+)
+
+
+2024-04-06 13:09:26,967 - INFO - [no key 0.00260s] {}
+2024-04-06 13:09:26,977 - INFO - 
+CREATE TABLE userimageinteractions (
+	username VARCHAR(50) NOT NULL, 
+	input_type VARCHAR(10) NOT NULL, 
+	input_prompt TEXT, 
+	input_image BLOB(16777215) NOT NULL, 
+	input_timestamp DATETIME NOT NULL, 
+	output_content TEXT NOT NULL, 
+	output_timestamp DATETIME NOT NULL, 
+	status VARCHAR(10) NOT NULL, 
+	PRIMARY KEY (username, input_timestamp)
+)
+
+
+2024-04-06 13:09:26,980 - INFO - [no key 0.00376s] {}
+2024-04-06 13:09:26,991 - INFO - COMMIT
+2024-04-06 13:09:27,799 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-06 13:09:27,800 - INFO - [33mPress CTRL+C to quit[0m
