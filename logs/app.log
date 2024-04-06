@@ -1,0 +1,266 @@
+2024-04-05 11:55:22,562 - INFO - SELECT DATABASE()
+2024-04-05 11:55:22,563 - INFO - [raw sql] {}
+2024-04-05 11:55:22,565 - INFO - SELECT @@sql_mode
+2024-04-05 11:55:22,566 - INFO - [raw sql] {}
+2024-04-05 11:55:22,567 - INFO - SELECT @@lower_case_table_names
+2024-04-05 11:55:22,568 - INFO - [raw sql] {}
+2024-04-05 11:55:22,569 - INFO - BEGIN (implicit)
+2024-04-05 11:55:22,570 - INFO - COMMIT
+2024-04-05 11:56:06,106 - INFO - SELECT DATABASE()
+2024-04-05 11:56:06,106 - INFO - [raw sql] {}
+2024-04-05 11:56:06,107 - INFO - SELECT @@sql_mode
+2024-04-05 11:56:06,108 - INFO - [raw sql] {}
+2024-04-05 11:56:06,108 - INFO - SELECT @@lower_case_table_names
+2024-04-05 11:56:06,109 - INFO - [raw sql] {}
+2024-04-05 11:56:06,111 - INFO - BEGIN (implicit)
+2024-04-05 11:56:06,111 - INFO - COMMIT
+2024-04-05 11:56:07,119 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-05 11:56:07,120 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-05 11:56:43,501 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-05 11:56:43,535 - ERROR - error: 'module' object is not callable, Response Code: 500
+2024-04-05 11:56:43,537 - INFO - 127.0.0.1 - - [05/Apr/2024 11:56:43] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 500 -
+2024-04-05 12:00:08,114 - INFO - SELECT DATABASE()
+2024-04-05 12:00:08,114 - INFO - [raw sql] {}
+2024-04-05 12:00:08,115 - INFO - SELECT @@sql_mode
+2024-04-05 12:00:08,116 - INFO - [raw sql] {}
+2024-04-05 12:00:08,117 - INFO - SELECT @@lower_case_table_names
+2024-04-05 12:00:08,117 - INFO - [raw sql] {}
+2024-04-05 12:00:08,119 - INFO - BEGIN (implicit)
+2024-04-05 12:00:08,120 - INFO - COMMIT
+2024-04-05 12:00:09,087 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-05 12:00:09,088 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-05 12:00:13,270 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-05 12:00:13,390 - ERROR - error: 'hashed_password' is an invalid keyword argument for User, Response Code: 500
+2024-04-05 12:00:13,391 - INFO - 127.0.0.1 - - [05/Apr/2024 12:00:13] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 500 -
+2024-04-05 12:00:41,943 - INFO - SELECT DATABASE()
+2024-04-05 12:00:41,943 - INFO - [raw sql] {}
+2024-04-05 12:00:41,947 - INFO - SELECT @@sql_mode
+2024-04-05 12:00:41,947 - INFO - [raw sql] {}
+2024-04-05 12:00:41,948 - INFO - SELECT @@lower_case_table_names
+2024-04-05 12:00:41,949 - INFO - [raw sql] {}
+2024-04-05 12:00:41,950 - INFO - BEGIN (implicit)
+2024-04-05 12:00:41,951 - INFO - COMMIT
+2024-04-05 12:00:42,808 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-05 12:00:42,809 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-05 12:00:45,567 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-05 12:00:45,700 - INFO - BEGIN (implicit)
+2024-04-05 12:00:45,705 - INFO - INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)
+2024-04-05 12:00:45,706 - INFO - [generated in 0.00180s] {'username': 'testUser2', 'password': '$pbkdf2-sha256$29000$Nwbg3Lt3zjmHsPbe23uvFQ$Tsx1NF6CXpaIDMnu1ahI6wt2U06uHwp5BxLBnBOYg7E'}
+2024-04-05 12:00:45,728 - INFO - COMMIT
+2024-04-05 12:00:45,731 - INFO - User Created Successfully!
+2024-04-05 12:00:45,732 - INFO - Request Processed, Response code: 201
+2024-04-05 12:00:45,734 - INFO - 127.0.0.1 - - [05/Apr/2024 12:00:45] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 201 -
+2024-04-05 12:00:57,295 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-05 12:00:57,296 - ERROR - error": "Password must be at least 8 characters long, include 1 capital letter, 1 lowercase letter, and 1 number, Response Code: 400
+2024-04-05 12:00:57,296 - INFO - 127.0.0.1 - - [05/Apr/2024 12:00:57] "[31m[1mPOST /auth/signup HTTP/1.1[0m" 400 -
+2024-04-05 12:08:33,286 - INFO - SELECT DATABASE()
+2024-04-05 12:08:33,287 - INFO - [raw sql] {}
+2024-04-05 12:08:33,288 - INFO - SELECT @@sql_mode
+2024-04-05 12:08:33,289 - INFO - [raw sql] {}
+2024-04-05 12:08:33,290 - INFO - SELECT @@lower_case_table_names
+2024-04-05 12:08:33,291 - INFO - [raw sql] {}
+2024-04-05 12:08:33,292 - INFO - BEGIN (implicit)
+2024-04-05 12:08:33,294 - INFO - COMMIT
+2024-04-05 12:08:34,159 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-05 12:08:34,159 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-05 12:08:42,345 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-05 12:08:42,349 - INFO - BEGIN (implicit)
+2024-04-05 12:08:42,363 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-05 12:08:42,364 - INFO - [generated in 0.00072s] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-05 12:08:42,384 - INFO - Request Processed, Response code: 200
+2024-04-05 12:08:42,386 - INFO - ROLLBACK
+2024-04-05 12:08:42,459 - INFO - 127.0.0.1 - - [05/Apr/2024 12:08:42] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-05 12:54:17,840 - INFO - SELECT DATABASE()
+2024-04-05 12:54:17,840 - INFO - [raw sql] {}
+2024-04-05 12:54:17,842 - INFO - SELECT @@sql_mode
+2024-04-05 12:54:17,843 - INFO - [raw sql] {}
+2024-04-05 12:54:17,845 - INFO - SELECT @@lower_case_table_names
+2024-04-05 12:54:17,845 - INFO - [raw sql] {}
+2024-04-05 12:54:17,847 - INFO - BEGIN (implicit)
+2024-04-05 12:54:17,848 - INFO - COMMIT
+2024-04-05 12:54:18,698 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-05 12:54:18,699 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-05 12:55:35,113 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-05 12:55:35,115 - INFO - BEGIN (implicit)
+2024-04-05 12:55:35,119 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-05 12:55:35,122 - INFO - [generated in 0.00260s] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-05 12:55:35,164 - INFO - Request Processed, Response code: 200
+2024-04-05 12:55:35,164 - INFO - ROLLBACK
+2024-04-05 12:55:35,166 - INFO - 127.0.0.1 - - [05/Apr/2024 12:55:35] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-05 12:56:22,496 - INFO - Request: <Request 'http://localhost:5000/text/prompt' [POST]>
+2024-04-05 12:56:35,075 - INFO - BEGIN (implicit)
+2024-04-05 12:56:35,078 - INFO - INSERT INTO usertextinteractions (username, input_type, input_content, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_content)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-05 12:56:35,079 - INFO - [generated in 0.00169s] {'username': 'testUser1', 'input_type': 'prompt', 'input_content': 'Best Footballer?', 'input_timestamp': datetime.datetime(2024, 4, 5, 16, 56, 22, 496199, tzinfo=datetime.timezone.utc), 'output_content': 'The title of "Best Footballer" is subjective and varies depending on individual opinions, criteria, and time periods. However, here are some of the m ... (2204 characters truncated) ... incha (Brazil)**\n\n* 2 FIFA World Cup titles (1958, 1962)\n* Known for his exceptional dribbling skills, creativity, and unpredictable playing style', 'output_timestamp': datetime.datetime(2024, 4, 5, 16, 56, 35, 75467, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-05 12:56:35,164 - INFO - ROLLBACK
+2024-04-05 12:56:35,167 - INFO - 127.0.0.1 - - [05/Apr/2024 12:56:35] "[35m[1mPOST /text/prompt HTTP/1.1[0m" 500 -
+2024-04-05 13:37:55,408 - INFO - SELECT DATABASE()
+2024-04-05 13:37:55,409 - INFO - [raw sql] {}
+2024-04-05 13:37:55,410 - INFO - SELECT @@sql_mode
+2024-04-05 13:37:55,411 - INFO - [raw sql] {}
+2024-04-05 13:37:55,412 - INFO - SELECT @@lower_case_table_names
+2024-04-05 13:37:55,412 - INFO - [raw sql] {}
+2024-04-05 13:37:55,414 - INFO - BEGIN (implicit)
+2024-04-05 13:37:55,415 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-05 13:37:55,416 - INFO - [raw sql] {}
+2024-04-05 13:37:55,501 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-05 13:37:55,502 - INFO - [raw sql] {}
+2024-04-05 13:37:55,535 - INFO - 
+CREATE TABLE usertextinteractions (
+	username VARCHAR(50) NOT NULL, 
+	input_type VARCHAR(10) NOT NULL, 
+	input_content TEXT NOT NULL, 
+	input_timestamp DATETIME NOT NULL, 
+	output_content TEXT NOT NULL, 
+	output_timestamp DATETIME NOT NULL, 
+	status VARCHAR(10) NOT NULL, 
+	PRIMARY KEY (username, input_timestamp)
+)
+
+
+2024-04-05 13:37:55,550 - INFO - [no key 0.01452s] {}
+2024-04-05 13:37:55,640 - INFO - COMMIT
+2024-04-05 13:37:56,727 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-05 13:37:56,727 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-05 13:38:19,281 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-05 13:38:19,284 - INFO - BEGIN (implicit)
+2024-04-05 13:38:19,287 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-05 13:38:19,288 - INFO - [generated in 0.00080s] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-05 13:38:19,309 - INFO - Request Processed, Response code: 200
+2024-04-05 13:38:19,310 - INFO - ROLLBACK
+2024-04-05 13:38:19,312 - INFO - 127.0.0.1 - - [05/Apr/2024 13:38:19] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-05 13:38:32,328 - INFO - Request: <Request 'http://localhost:5000/text/prompt' [POST]>
+2024-04-05 13:38:44,878 - INFO - BEGIN (implicit)
+2024-04-05 13:38:44,880 - INFO - INSERT INTO usertextinteractions (username, input_type, input_content, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_content)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-05 13:38:44,881 - INFO - [generated in 0.00099s] {'username': 'testUser1', 'input_type': 'prompt', 'input_content': 'Best Footballer?', 'input_timestamp': datetime.datetime(2024, 4, 5, 17, 38, 32, 329636, tzinfo=datetime.timezone.utc), 'output_content': 'The debate over who is the best footballer of all time is a matter of opinion and subjective criteria. However, based on a combination of individual  ... (3285 characters truncated) ... \nUltimately, the debate over who is the best footballer of all time will continue to be subjective and based on individual preferences and criteria.', 'output_timestamp': datetime.datetime(2024, 4, 5, 17, 38, 44, 878646, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-05 13:38:44,887 - INFO - COMMIT
+2024-04-05 13:38:44,901 - INFO - Request Processed, Response code: 200
+2024-04-05 13:38:44,903 - INFO - 127.0.0.1 - - [05/Apr/2024 13:38:44] "POST /text/prompt HTTP/1.1" 200 -
+2024-04-05 13:39:29,355 - INFO - Request: <Request 'http://localhost:5000/text/chat' [POST]>
+2024-04-05 13:39:30,231 - INFO - BEGIN (implicit)
+2024-04-05 13:39:30,232 - INFO - INSERT INTO usertextinteractions (username, input_type, input_content, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_content)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-05 13:39:30,233 - INFO - [cached since 45.35s ago] {'username': 'testUser1', 'input_type': 'chat', 'input_content': 'What is the capitol of India?', 'input_timestamp': datetime.datetime(2024, 4, 5, 17, 39, 29, 356880, tzinfo=datetime.timezone.utc), 'output_content': 'New Delhi', 'output_timestamp': datetime.datetime(2024, 4, 5, 17, 39, 30, 230496, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-05 13:39:30,235 - INFO - COMMIT
+2024-04-05 13:39:30,247 - INFO - Request Processed, Response code: 200
+2024-04-05 13:39:30,248 - INFO - 127.0.0.1 - - [05/Apr/2024 13:39:30] "POST /text/chat HTTP/1.1" 200 -
+2024-04-05 13:39:39,031 - INFO - Request: <Request 'http://localhost:5000/text/chat' [POST]>
+2024-04-05 13:39:42,039 - INFO - BEGIN (implicit)
+2024-04-05 13:39:42,040 - INFO - INSERT INTO usertextinteractions (username, input_type, input_content, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_content)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-05 13:39:42,042 - INFO - [cached since 57.16s ago] {'username': 'testUser1', 'input_type': 'chat', 'input_content': 'Where is it located?', 'input_timestamp': datetime.datetime(2024, 4, 5, 17, 39, 39, 32418, tzinfo=datetime.timezone.utc), 'output_content': 'New Delhi is located in northern India, in the National Capital Territory of Delhi. It is situated on the west bank of the Yamuna River, adjacent to  ... (427 characters truncated) ... rnment, the Supreme Court, and the Parliament of India. It is also a major cultural and economic center, with a population of over 10 million people.', 'output_timestamp': datetime.datetime(2024, 4, 5, 17, 39, 42, 38495, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-05 13:39:42,134 - INFO - COMMIT
+2024-04-05 13:39:42,148 - INFO - Request Processed, Response code: 200
+2024-04-05 13:39:42,149 - INFO - 127.0.0.1 - - [05/Apr/2024 13:39:42] "POST /text/chat HTTP/1.1" 200 -
+2024-04-05 13:40:15,964 - INFO - Request: <Request 'http://localhost:5000/text/chat' [POST]>
+2024-04-05 13:40:15,964 - ERROR - error": "No prompt provided, Response Code: 400
+2024-04-05 13:40:15,965 - INFO - 127.0.0.1 - - [05/Apr/2024 13:40:15] "[31m[1mPOST /text/chat HTTP/1.1[0m" 400 -
+2024-04-05 13:52:47,379 - INFO - SELECT DATABASE()
+2024-04-05 13:52:47,379 - INFO - [raw sql] {}
+2024-04-05 13:52:47,380 - INFO - SELECT @@sql_mode
+2024-04-05 13:52:47,381 - INFO - [raw sql] {}
+2024-04-05 13:52:47,382 - INFO - SELECT @@lower_case_table_names
+2024-04-05 13:52:47,383 - INFO - [raw sql] {}
+2024-04-05 13:52:47,384 - INFO - BEGIN (implicit)
+2024-04-05 13:52:47,385 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-05 13:52:47,386 - INFO - [raw sql] {}
+2024-04-05 13:52:47,813 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-05 13:52:47,814 - INFO - [raw sql] {}
+2024-04-05 13:52:47,817 - INFO - COMMIT
+2024-04-05 13:52:48,688 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-05 13:52:48,689 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-05 13:53:29,224 - INFO - SELECT DATABASE()
+2024-04-05 13:53:29,225 - INFO - [raw sql] {}
+2024-04-05 13:53:29,226 - INFO - SELECT @@sql_mode
+2024-04-05 13:53:29,227 - INFO - [raw sql] {}
+2024-04-05 13:53:29,228 - INFO - SELECT @@lower_case_table_names
+2024-04-05 13:53:29,228 - INFO - [raw sql] {}
+2024-04-05 13:53:29,230 - INFO - BEGIN (implicit)
+2024-04-05 13:53:29,231 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-05 13:53:29,231 - INFO - [raw sql] {}
+2024-04-05 13:53:29,413 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-05 13:53:29,414 - INFO - [raw sql] {}
+2024-04-05 13:53:29,418 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-05 13:53:29,419 - INFO - [raw sql] {}
+2024-04-05 13:53:29,423 - INFO - 
+CREATE TABLE userimageinteractions (
+	username VARCHAR(50) NOT NULL, 
+	input_type VARCHAR(10) NOT NULL, 
+	input_prompt TEXT, 
+	input_image BLOB(16777215) NOT NULL, 
+	input_timestamp DATETIME NOT NULL, 
+	output_content TEXT NOT NULL, 
+	output_timestamp DATETIME NOT NULL, 
+	status VARCHAR(10) NOT NULL, 
+	PRIMARY KEY (username, input_timestamp)
+)
+
+
+2024-04-05 13:53:29,429 - INFO - [no key 0.00635s] {}
+2024-04-05 13:53:29,852 - INFO - COMMIT
+2024-04-05 13:53:30,794 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-05 13:53:30,794 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-05 13:53:39,362 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-05 13:53:39,366 - INFO - BEGIN (implicit)
+2024-04-05 13:53:39,368 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-05 13:53:39,370 - INFO - [generated in 0.00156s] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-05 13:53:39,394 - INFO - Request Processed, Response code: 200
+2024-04-05 13:53:39,395 - INFO - ROLLBACK
+2024-04-05 13:53:39,398 - INFO - 127.0.0.1 - - [05/Apr/2024 13:53:39] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-05 13:54:02,476 - INFO - BEGIN (implicit)
+2024-04-05 13:54:02,478 - INFO - INSERT INTO userimageinteractions (username, input_type, input_prompt, input_image, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_prompt)s, %(input_image)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-05 13:54:02,479 - INFO - [generated in 0.00127s] {'username': 'testUser1', 'input_type': 'image', 'input_prompt': 'Describe the image in 50 words', 'input_image': b'\xff\xd8\xff\xe0\x00\x10JFIF\x00\x01\x01\x00\x00\x01\x00\x01\x00\x00\xff\xdb\x00C\x00\x08\x06\x06\x07\x06\x05\x08\x07\x07\x07\t\t\x08\n\x0c\x14\r\x0 ... (197948 characters truncated) ... t\xd6\xc0>\xde\'1\xc6%H\xc4;\x86\xf0\x0eX\xd5\xc9\xfc\xcby\xa5\x98\xdb\x99"b0\x08\x00\x81Ut_\xdf4\xe2BX.1\x93\xd2\xac;\xb1\x93\x96<g\x14\x15c\xff\xd9', 'input_timestamp': datetime.datetime(2024, 4, 5, 17, 53, 58, 174460, tzinfo=datetime.timezone.utc), 'output_content': ' A happy family is walking down a rural road. The parents are carrying their two young children on their backs. The sun is setting, and the sky is a warm, golden color. The family is laughing.', 'output_timestamp': datetime.datetime(2024, 4, 5, 17, 54, 2, 475178, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-05 13:54:02,524 - INFO - COMMIT
+2024-04-05 13:54:02,527 - INFO - Request Processed, Response code: 200
+2024-04-05 13:54:02,528 - INFO - 127.0.0.1 - - [05/Apr/2024 13:54:02] "POST /image/process HTTP/1.1" 200 -
+2024-04-06 12:12:52,598 - INFO - SELECT DATABASE()
+2024-04-06 12:12:52,690 - INFO - [raw sql] {}
+2024-04-06 12:12:52,697 - INFO - SELECT @@sql_mode
+2024-04-06 12:12:52,699 - INFO - [raw sql] {}
+2024-04-06 12:12:52,702 - INFO - SELECT @@lower_case_table_names
+2024-04-06 12:12:52,703 - INFO - [raw sql] {}
+2024-04-06 12:12:52,709 - INFO - BEGIN (implicit)
+2024-04-06 12:12:52,711 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-06 12:12:52,711 - INFO - [raw sql] {}
+2024-04-06 12:12:52,743 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-06 12:12:52,744 - INFO - [raw sql] {}
+2024-04-06 12:12:52,746 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-06 12:12:52,747 - INFO - [raw sql] {}
+2024-04-06 12:12:52,750 - INFO - COMMIT
+2024-04-06 12:12:54,419 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-06 12:12:54,420 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-06 12:13:25,578 - INFO - SELECT DATABASE()
+2024-04-06 12:13:25,579 - INFO - [raw sql] {}
+2024-04-06 12:13:25,580 - INFO - SELECT @@sql_mode
+2024-04-06 12:13:25,581 - INFO - [raw sql] {}
+2024-04-06 12:13:25,582 - INFO - SELECT @@lower_case_table_names
+2024-04-06 12:13:25,582 - INFO - [raw sql] {}
+2024-04-06 12:13:25,584 - INFO - BEGIN (implicit)
+2024-04-06 12:13:25,584 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-06 12:13:25,585 - INFO - [raw sql] {}
+2024-04-06 12:13:25,588 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-06 12:13:25,588 - INFO - [raw sql] {}
+2024-04-06 12:13:25,591 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-06 12:13:25,592 - INFO - [raw sql] {}
+2024-04-06 12:13:25,595 - INFO - COMMIT
+2024-04-06 12:13:26,469 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-06 12:13:26,469 - INFO - [33mPress CTRL+C to quit[0m
