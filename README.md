@@ -86,11 +86,14 @@ OR
 
 + The ```API Documentation/``` folder in the root directory of the project holds the details about all the API end points, the expected parameters, the URLs and what does the end point do.\
 This documentation is a HTML page generated from postman and should be opened in a browser (preferably Google Chrome).\
+
 The ```css/``` and ```js/``` folders cater to this HTML page.\
-The ```Gemini-Request-Hub.postman_collection.json``` file is generated from postman to document all the APIs.
 
-+ Each python file in the project has a description about what is the code in the file, its functionality and usage. I have also added doc strings in each method (or function) throught the project to provide a comprehensive understanding of it.
+The ```Gemini-Request-Hub.postman_collection.json``` file is generated from Postman to document all the APIs.
 
++ Each python file in the project has a description about what is the code in the file, its functionality and usage at the top of the file. I have also added ```doc strings in each method (or function)``` throught the project to provide a comprehensive understanding of it.
+
++ Sample code on how to make the API calls in python can be found in unit testing scripts in ```Unit and Integration Tests\``` folder. You can refer the same to write a custom script based on your business logic.
 
 <h2>Unit Testing</h2>
 
@@ -98,13 +101,13 @@ The ```Unit and Integration Tests\``` folder consists of different python based 
 
 Inorder to run the any of the script follow the below steps:
 
-In one terminal run the server as mentioned in ```Step 7```
++ In one terminal run the server as mentioned in ```Step 7```
 
-In the second terminal - 
++ In the second terminal - 
 
-```cd '.\Unit and Integration Tests\'```
+    + ```cd '.\Unit and Integration Tests\'```
 
-```python <file_name>.py```
+    + ```python <file_name>.py```
 
 The output consists of different cases and the response obtained for each of them. This gives a detailed about all the edge cases, exceptions and scenarios.
 
