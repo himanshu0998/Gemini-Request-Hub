@@ -13,10 +13,10 @@ Gemini-Request-Hub/\
 ├── app/\
 │   ├──\_\_init\_\_.py\
 │   ├── models/\
-│   │   ├── User.py\
-│   │   ├── TextInteractions.py\
-│   │   └── ImageInteractions.py\
-│   │\
+│      ├── User.py\
+│      ├── TextInteractions.py\
+│      └── ImageInteractions.py\
+│\
 │── routes/\
 │          ├── auth.py\
 │          ├── image_processing.py\
