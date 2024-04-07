@@ -43,8 +43,8 @@ Gemini-Request-Hub/\
 
 The basic requirements include:
 
-+ ```Python 3.10``` - refer ```https://www.python.org/downloads/```
-+ ```MySQL setup on the local machine``` - refer ```https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/```
++ ```Python 3.10``` - refer https://www.python.org/downloads/ for installation.
++ ```MySQL setup on the local machine``` - refer https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/ for installation.
 
 These should be installed in the local machine for installing any further dependencies.
 
