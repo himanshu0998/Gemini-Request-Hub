@@ -18,9 +18,9 @@ Gemini-Request-Hub/\
 │   │   └── ImageInteractions.py\
 │   │\
 │   └── routes/\
-│       ├── auth.py\
-│       ├── image_processing.py\
-│       └── text_processing.py\
+│          ├── auth.py\
+│          ├── image_processing.py\
+│          └── text_processing.py\
 │\
 ├── logs/\
 │   ├── app.log\
