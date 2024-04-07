@@ -13,9 +13,9 @@ Gemini-Request-Hub/\
 ├── app/\
 │   ├──\_\_init\_\_.py\
 │   ├── models/\
-│        &nbsp├── User.py\
-│        &nbsp├── TextInteractions.py\
-│        &nbsp└── ImageInteractions.py\
+│             ├── User.py\
+│             ├── TextInteractions.py\
+│             └── ImageInteractions.py\
 │\
 │── routes/\
 │          ├── auth.py\
