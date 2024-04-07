@@ -11,7 +11,7 @@ This is a backend project build on top of freely available Google Gemini APIs wh
 Gemini-Request-Hub/\
 │\
 ├── app/\
-│   ├── __init__.py\
+│   ├──\_\_init\_\_.py\
 │   ├── models/\
 │   │   ├── User.py\
 │   │   ├── TextInteractions.py\
