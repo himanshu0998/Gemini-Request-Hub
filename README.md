@@ -2,9 +2,9 @@
 
 This is a backend project build on top of freely available Google Gemini APIs which provides prompt, chat and image processsing APIs to its end users which can be further used to integrate with any frontend application as per the requirements. 
 
-Clone this repository using:
+<h4>Clone this repository using:</h4>
 
-git clone https://github.com/himanshu0998/Gemini-Request-Hub.git
+```git clone https://github.com/himanshu0998/Gemini-Request-Hub.git```
 
 <h2>Repository Structure:</h2>
 
@@ -42,7 +42,7 @@ The basic requirements include:
 
 Apart from this The requirements.txt file consists of all the necessary dependencies required to run this project. These dependencies can be installed by executing the below command:
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 <h2>Setting Up the Database</h2>
 
@@ -70,11 +70,11 @@ This key should be written as a value of 'API_KEY' variable in 'config.py' file.
 
 In order to run this server/application run the below command from the root directory of the project
 
-flask run
+```flask run```
 
 OR
 
-python -m flask run
+```python -m flask run```
 
 <h2>API Documentation</h2>
 
