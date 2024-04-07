@@ -1,4 +1,4 @@
-Gemini-Request-hub
+<h2>Gemini-Request-hub</h2>h2>
 
 This is a backend project build on top of freely available Google Gemini APIs which provides prompt, chat and image processsing APIs to its end users which can be further used to integrate with any frontend application as per the requirements. 
 
@@ -6,7 +6,7 @@ Clone this repository using:
 
 git clone https://github.com/himanshu0998/Gemini-Request-Hub.git
 
-Repository Structure:
+<h2>Repository Structure:</h2>
 
 Gemini-Request-Hub/\
 │\
@@ -33,7 +33,7 @@ Gemini-Request-Hub/\
 ├── requirements.txt\
 └── README.md\
 
-Requirements
+<h2>Requirements</h2>
 
 The basic requirements include:
 
