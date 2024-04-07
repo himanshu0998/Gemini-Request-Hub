@@ -27,7 +27,7 @@ Gemini-Request-Hub/\
 │── logger_config.py\
 │── run.py\
 ├── requirements.txt\
-└── README.md\
+└── README.md
 
 <h2>Step 1: Clone this repository using:</h2>
 
@@ -52,8 +52,8 @@ Apart from this The requirements.txt file consists of all the necessary dependen
 
 The project utilizes <b>SQLAlchemy</b> to establish an <u>ORM (Object-Relational Mapping)</u> based database, which abstracts the MySQL database into Python objects. This approach allows to interact with the database using Pythonic operations rather than writing raw SQL queries. Models for each tables is present in the ```app/models/``` folder.
 
-```User.py``` - corresponds to the structure of ```users``` table in the database.
-```TextInteractions.py``` - corresponds to the structure of ```usertextinteractions``` table in the database.
+```User.py``` - corresponds to the structure of ```users``` table in the database.\
+```TextInteractions.py``` - corresponds to the structure of ```usertextinteractions``` table in the database.\
 ```ImageInteractions.py``` - corresponds to the structure of ```userimageinteractions``` table in the database.
 
 Inorder to setup the database update the ```config.py``` file in the roor directory with the below details:
