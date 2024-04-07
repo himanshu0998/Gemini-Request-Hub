@@ -84,7 +84,10 @@ OR
 
 <h2>Documentation</h2>
 
-+ The ```API Documentation/``` folder in the root directory of the project holds the details about all the API end points, the expected parameters, the URLs and what does the end point do.\This documentation is a HTML page generated from postman and should be opened in a browser (preferably Google Chrome).\The ```css/``` and ```js/``` folders cater to this HTML page.\The ```Gemini-Request-Hub.postman_collection.json``` file is generated from postman to document all the APIs.
++ The ```API Documentation/``` folder in the root directory of the project holds the details about all the API end points, the expected parameters, the URLs and what does the end point do.\
+This documentation is a HTML page generated from postman and should be opened in a browser (preferably Google Chrome).\
+The ```css/``` and ```js/``` folders cater to this HTML page.\
+The ```Gemini-Request-Hub.postman_collection.json``` file is generated from postman to document all the APIs.
 
 + Each python file in the project has a description about what is the code in the file, its functionality and usage. I have also added doc strings in each method (or function) throught the project to provide a comprehensive understanding of it.
 
