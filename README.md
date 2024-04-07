@@ -13,7 +13,8 @@ Gemini-Request-Hub/\
 │   ├── models/\
 │             &nbsp;&nbsp;&nbsp;&nbsp;├── User.py\
 │             &nbsp;&nbsp;&nbsp;&nbsp;├── TextInteractions.py\
-│             &nbsp;&nbsp;&nbsp;&nbsp;└── ImageInteractions.py\
+│             &nbsp;&nbsp;&nbsp;&nbsp;├── ImageInteractions.py\
+│             &nbsp;&nbsp;&nbsp;&nbsp;└── BlockListed.py\
 │\
 │── routes/\
 │          ├── auth.py\
@@ -21,7 +22,7 @@ Gemini-Request-Hub/\
 │          └── text_processing.py\
 │\
 ├── logs/\
-│   ├── app.log\
+│   └──app.log\
 │\
 │── api_client.py\
 │── config.py\
@@ -30,6 +31,14 @@ Gemini-Request-Hub/\
 │── run.py\
 ├── requirements.txt\
 └── README.md
+
+Here, the ```app/routes``` folder contains the code for all the various end points.
+
++ ```auth.py``` contains the definition for ```/auth/signup```, ```/auth/signin```, ```/auth/logout``` end points.
++ ```text_processing.py``` contains the definition for ```/text/prompt```, ```/text/chat``` end points.
++ ```image_processing.py``` contains the definition for ```/text/prompt```, ```/text/chat``` end points.
+
+The other files are explained below in the document wherever required. 
 
 <h2>Step 1: Installing Requirements</h2>
 
@@ -58,7 +67,8 @@ The project utilizes <b>SQLAlchemy</b> to establish an <u>ORM (Object-Relational
 
 ```User.py``` - corresponds to the structure of ```users``` table in the database.\
 ```TextInteractions.py``` - corresponds to the structure of ```usertextinteractions``` table in the database.\
-```ImageInteractions.py``` - corresponds to the structure of ```userimageinteractions``` table in the database.
+```ImageInteractions.py``` - corresponds to the structure of ```userimageinteractions``` table in the database.\
+```BlockListedToken.py``` - corresponds to the structure of ```userimageinteractions``` table in the database.\
 
 Inorder to setup the database update the ```config.py``` file in the roor directory with the below details:
 + ```MYSQL_USER``` - username of the MySQL database (typically its root)
