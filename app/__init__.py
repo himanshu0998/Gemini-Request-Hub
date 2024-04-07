@@ -22,8 +22,7 @@
           in the blocklist, effectively enabling token revocation.
         - Database models must be imported before calling 'Base.metadata.create_all' to ensure SQLAlchemy is aware of them and can 
           create the necessary tables.
-    """
-
+"""
 
 from flask import Flask
 from config import Config

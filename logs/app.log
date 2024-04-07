@@ -999,3 +999,70 @@ WHERE blocklisted_tokens.jti = %(jti_1)s
 2024-04-07 01:04:38,151 - INFO - [cached since 23.59s ago] {'jti_1': '93d50bf1-daa3-406d-855b-3be8fd7cbc9c', 'param_1': 1}
 2024-04-07 01:04:38,153 - INFO - ROLLBACK
 2024-04-07 01:04:38,154 - INFO - 127.0.0.1 - - [07/Apr/2024 01:04:38] "[31m[1mPOST /text/prompt HTTP/1.1[0m" 401 -
+2024-04-07 01:47:20,071 - INFO - SELECT DATABASE()
+2024-04-07 01:47:20,072 - INFO - [raw sql] {}
+2024-04-07 01:47:20,074 - INFO - SELECT @@sql_mode
+2024-04-07 01:47:20,074 - INFO - [raw sql] {}
+2024-04-07 01:47:20,075 - INFO - SELECT @@lower_case_table_names
+2024-04-07 01:47:20,075 - INFO - [raw sql] {}
+2024-04-07 01:47:20,077 - INFO - BEGIN (implicit)
+2024-04-07 01:47:20,078 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-07 01:47:20,078 - INFO - [raw sql] {}
+2024-04-07 01:47:20,183 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-07 01:47:20,186 - INFO - [raw sql] {}
+2024-04-07 01:47:20,192 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-07 01:47:20,193 - INFO - [raw sql] {}
+2024-04-07 01:47:20,197 - INFO - DESCRIBE `lucra_backend_project`.`blocklisted_tokens`
+2024-04-07 01:47:20,199 - INFO - [raw sql] {}
+2024-04-07 01:47:20,202 - INFO - COMMIT
+2024-04-07 01:47:21,580 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-07 01:47:21,581 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-07 01:48:30,383 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-07 01:48:30,387 - INFO - BEGIN (implicit)
+2024-04-07 01:48:30,390 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-07 01:48:30,390 - INFO - [generated in 0.00084s] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-07 01:48:30,411 - INFO - Request Processed, Response code: 200
+2024-04-07 01:48:30,412 - INFO - ROLLBACK
+2024-04-07 01:48:30,414 - INFO - 127.0.0.1 - - [07/Apr/2024 01:48:30] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-07 01:48:32,450 - INFO - BEGIN (implicit)
+2024-04-07 01:48:32,453 - INFO - SELECT blocklisted_tokens.id AS blocklisted_tokens_id, blocklisted_tokens.jti AS blocklisted_tokens_jti, blocklisted_tokens.expires_at AS blocklisted_tokens_expires_at 
+FROM blocklisted_tokens 
+WHERE blocklisted_tokens.jti = %(jti_1)s 
+ LIMIT %(param_1)s
+2024-04-07 01:48:32,455 - INFO - [generated in 0.00226s] {'jti_1': 'dd2531bb-f2d0-4d36-8a77-ea2d6f79b982', 'param_1': 1}
+2024-04-07 01:48:32,458 - INFO - ROLLBACK
+2024-04-07 01:48:32,460 - INFO - BEGIN (implicit)
+2024-04-07 01:48:32,462 - INFO - INSERT INTO blocklisted_tokens (jti, expires_at) VALUES (%(jti)s, %(expires_at)s)
+2024-04-07 01:48:32,463 - INFO - [generated in 0.00113s] {'jti': 'dd2531bb-f2d0-4d36-8a77-ea2d6f79b982', 'expires_at': datetime.datetime(2024, 4, 7, 2, 3, 30)}
+2024-04-07 01:48:32,478 - INFO - COMMIT
+2024-04-07 01:48:32,482 - INFO - Token dd2531bb-f2d0-4d36-8a77-ea2d6f79b982 blacklisted. Successfully logged out, Response code: 200
+2024-04-07 01:48:32,483 - INFO - 127.0.0.1 - - [07/Apr/2024 01:48:32] "POST /auth/logout HTTP/1.1" 200 -
+2024-04-07 01:48:34,523 - INFO - 127.0.0.1 - - [07/Apr/2024 01:48:34] "[31m[1mPOST /auth/logout HTTP/1.1[0m" 422 -
+2024-04-07 01:49:14,147 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-07 01:49:14,150 - INFO - BEGIN (implicit)
+2024-04-07 01:49:14,153 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-07 01:49:14,158 - INFO - [cached since 43.77s ago] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-07 01:49:14,197 - INFO - Request Processed, Response code: 200
+2024-04-07 01:49:14,198 - INFO - ROLLBACK
+2024-04-07 01:49:14,200 - INFO - 127.0.0.1 - - [07/Apr/2024 01:49:14] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-07 01:49:16,232 - INFO - BEGIN (implicit)
+2024-04-07 01:49:16,233 - INFO - SELECT blocklisted_tokens.id AS blocklisted_tokens_id, blocklisted_tokens.jti AS blocklisted_tokens_jti, blocklisted_tokens.expires_at AS blocklisted_tokens_expires_at 
+FROM blocklisted_tokens 
+WHERE blocklisted_tokens.jti = %(jti_1)s 
+ LIMIT %(param_1)s
+2024-04-07 01:49:16,234 - INFO - [cached since 43.78s ago] {'jti_1': '2d928b95-6288-47fe-8d5e-9e89a2b63d1f', 'param_1': 1}
+2024-04-07 01:49:16,236 - INFO - ROLLBACK
+2024-04-07 01:49:16,237 - INFO - BEGIN (implicit)
+2024-04-07 01:49:16,238 - INFO - INSERT INTO blocklisted_tokens (jti, expires_at) VALUES (%(jti)s, %(expires_at)s)
+2024-04-07 01:49:16,239 - INFO - [cached since 43.78s ago] {'jti': '2d928b95-6288-47fe-8d5e-9e89a2b63d1f', 'expires_at': datetime.datetime(2024, 4, 7, 2, 4, 14)}
+2024-04-07 01:49:16,240 - INFO - COMMIT
+2024-04-07 01:49:16,242 - INFO - Token 2d928b95-6288-47fe-8d5e-9e89a2b63d1f blacklisted. Successfully logged out, Response code: 200
+2024-04-07 01:49:16,243 - INFO - 127.0.0.1 - - [07/Apr/2024 01:49:16] "POST /auth/logout HTTP/1.1" 200 -
+2024-04-07 01:49:18,287 - INFO - 127.0.0.1 - - [07/Apr/2024 01:49:18] "[31m[1mPOST /auth/logout HTTP/1.1[0m" 422 -
