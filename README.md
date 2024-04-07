@@ -68,7 +68,7 @@ The project utilizes <b>SQLAlchemy</b> to establish an <u>ORM (Object-Relational
 ```User.py``` - corresponds to the structure of ```users``` table in the database.\
 ```TextInteractions.py``` - corresponds to the structure of ```usertextinteractions``` table in the database.\
 ```ImageInteractions.py``` - corresponds to the structure of ```userimageinteractions``` table in the database.\
-```BlockListedToken.py``` - corresponds to the structure of ```userimageinteractions``` table in the database.\
+```BlockListedToken.py``` - corresponds to the structure of ```userimageinteractions``` table in the database.
 
 Inorder to setup the database update the ```config.py``` file in the roor directory with the below details:
 + ```MYSQL_USER``` - username of the MySQL database (typically its root)
