@@ -21,6 +21,24 @@ model = initialize_model("gemini-pro-vision",Config.API_KEY)
 @bp.route('/process', methods=['POST'])
 @jwt_required()
 def process_image():
+    """
+    Processes an image upload and an optional prompt to generate content based on the input image.
+
+    This endpoint ('/process') requires a POST request with a valid JWT for authentication and an image file in the request's files. It optionally accepts a text prompt in the request's form data to guide the content generation process. The function extracts the user identity from the JWT, processes the uploaded image and the prompt (if provided), and attempts to generate related content using a predefined model.
+
+    The function logs the transaction, including any errors encountered during the process. It stores the interaction details, including the input image, prompt, and generated content (if any), in the database with timestamps for both input and output.
+
+    Parameters:
+    - None directly; relies on multipart/form-data for the 'image' file and optionally 'prompt' text.
+
+    Returns:
+    - A JSON response containing the model's generated content if successful, along with a 200 OK status.
+    - A JSON response with an error message and a 400 Bad Request status if no image file is provided in the request.
+    - A JSON response with an error message and a 500 Internal Server Error status if an error occurs during processing or if the model's response is in an unexpected format.
+
+    Note: This function demonstrates handling file uploads and text input in a secure, authenticated context. It includes error handling for missing files, model processing errors, and database transaction management.
+    """
+
     user_id = get_jwt_identity()
     if 'image' not in request.files:
         logging.error("error\": \"No image file provided, Response Code: 400")

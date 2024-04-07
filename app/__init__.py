@@ -1,3 +1,18 @@
+"""
+Initializes and configures the Flask application with MySQL, JWT authentication, and logging.
+
+This module sets up a Flask application integrating several components crucial for a web application: database connection via SQLAlchemy and MySQL, JWT-based authentication for secure endpoints, and a logging system for application-wide logging. It also creates all database tables based on SQLAlchemy models if they don't already exist.
+
+The Flask application is configured with settings from the `Config` class, and the MySQL and JWT extensions are initialized with the Flask app instance. Additionally, the application's routes are imported and registered using Flask Blueprints, organizing the application into distinct authentication, image processing, and text processing components.
+
+Functions:
+    create_app(): Configures and returns the Flask application instance.
+
+Usage:
+    This function is intended to be called to initialize the Flask application, typically from an entry point in the project. After the application is returned by `create_app()`, it can be run to serve the web application.
+"""
+
+
 from flask import Flask
 from config import Config
 from database import engine, Base

@@ -491,3 +491,20 @@ WHERE users.username = %(username_1)s
 2024-04-06 20:06:10,749 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 2024-04-06 20:06:10,750 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-06 22:46:32,790 - INFO - SELECT DATABASE()
+2024-04-06 22:46:32,791 - INFO - [raw sql] {}
+2024-04-06 22:46:32,794 - INFO - SELECT @@sql_mode
+2024-04-06 22:46:32,795 - INFO - [raw sql] {}
+2024-04-06 22:46:32,797 - INFO - SELECT @@lower_case_table_names
+2024-04-06 22:46:32,798 - INFO - [raw sql] {}
+2024-04-06 22:46:32,801 - INFO - BEGIN (implicit)
+2024-04-06 22:46:32,803 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-06 22:46:32,804 - INFO - [raw sql] {}
+2024-04-06 22:46:32,844 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-06 22:46:32,846 - INFO - [raw sql] {}
+2024-04-06 22:46:32,851 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-06 22:46:32,852 - INFO - [raw sql] {}
+2024-04-06 22:46:32,857 - INFO - COMMIT
+2024-04-06 22:46:34,187 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-06 22:46:34,189 - INFO - [33mPress CTRL+C to quit[0m

@@ -1,4 +1,20 @@
-# database.py
+"""
+A module for configuring and initializing the database connection using SQLAlchemy and MySQL.
+
+This module defines the database URI based on configurations specified in a separate `config.py` module. It utilizes SQLAlchemy for ORM (Object-Relational Mapping) capabilities and `pymysql` as the database driver to connect to a MySQL database. The connection details such as the database username, host, password, and database name are retrieved from the `Config` object, which is expected to be defined in the `config.py` module.
+
+Upon importing this module and if the specified database does not exist, it will automatically create the database. It sets up a `SessionLocal` class that can be used to create session instances for interacting with the database. The `Base` class from SQLAlchemy's declarative base is also instantiated, which can be used as a base class for model definitions.
+
+Functions and Attributes:
+- `DATABASE_URI`: A string representing the fully constructed database URI.
+- `engine`: The SQLAlchemy engine instance connected to the database.
+- `SessionLocal`: A scoped session factory for creating new database session objects.
+- `Base`: The base class for declarative class definitions.
+
+Usage:
+Import `SessionLocal` to create new database sessions and `Base` to define ORM models in separate modules.
+"""
+
 from sqlalchemy import *
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker

@@ -78,14 +78,14 @@ OR
 
 <h2>API Documentation</h2>
 
-The API Documentation folder in the root directory of the project holds the details about all the API end points, the expected parameters,
+The ```API Documentation/``` folder in the root directory of the project holds the details about all the API end points, the expected parameters,
 the URLs and what does the end point do.
 
 This documentation is a HTML page generated from postman and should be opened in a browser (preferably Google Chrome)
 
 <h2>Logging</h2>
 
-The 'logs' folder with 'app.log' file will hold all the logs of the project. The logging is configured and initialized in the 'app/__init__.py' using the 'logger_config.py'
+The ```logs``` folder with ```app.log``` file will hold all the logs of the project. The logging is configured and initialized in the ```app/__init__.py``` using the ```logger_config.py```
 
 <h2>Unit Testing</h2>
 

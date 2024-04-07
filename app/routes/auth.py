@@ -15,6 +15,24 @@ bp = Blueprint('auth', __name__, url_prefix='/auth')
 
 @bp.route('/signup', methods=['POST'])
 def signup():
+    """
+    Create a new user account with the provided username and password.
+
+    This endpoint ('/signup') accepts POST requests with JSON content including the username and password for the new account. The function validates the username to ensure it does not exceed 50 characters and validates the password to ensure it meets complexity requirements (at least 8 characters long, includes at least one uppercase letter, one lowercase letter, and one number). If the validations pass, the password is hashed and the new user is saved to the database.
+
+    If any validation fails, an appropriate error message and a 400 Bad Request status are returned. If the user creation process encounters an error, such as a username already existing or a database error, an error message and a 500 Internal Server Error status are returned.
+
+    Parameters:
+    - None directly taken; however, the function expects a JSON payload in the request with 'username' and 'password' keys.
+
+    Returns:
+    - A JSON response with a success message and a 201 Created status if the user is successfully created.
+    - A JSON response with an error message and a 400 Bad Request status if input validation fails.
+    - A JSON response with an error message and a 500 Internal Server Error status if there is a problem creating the user in the database.
+
+    Note: The function initializes a database session, logs request and error information, and handles exceptions related to database operations.
+    """
+
     db_session = SessionLocal()
     logging.info(f"Request: {str(request)}")
     data = request.get_json()
@@ -46,8 +64,6 @@ def signup():
         db_session.add(new_user)
         db_session.commit()
         logging.info("User Created Successfully!")
-        # cursor.execute("INSERT INTO users(username, password) VALUES (%s, %s)", (username, hashed_password))
-        # mysql.connection.commit()
     except Exception as e:
         # print(e)
         db_session.rollback()
@@ -61,15 +77,27 @@ def signup():
 
 @bp.route('/signin', methods=['POST'])
 def signin():
+    """
+    Authenticate a user based on username and password.
+
+    This endpoint ('/signin') accepts POST requests with JSON content containing the username and password. It attempts to authenticate the user by checking the provided credentials against the stored credentials in the database. If the authentication is successful, the function generates and returns an access token.
+
+    The function logs the request details and the outcome of the authentication attempt. In case of successful authentication, an access token is returned with a 200 OK status. If the authentication fails due to invalid credentials, an error message and a 401 Unauthorized status are returned.
+
+    Parameters:
+    - None directly taken; however, the function expects a JSON payload in the request with 'username' and 'password' keys.
+
+    Returns:
+    - A JSON response containing the access token and a 200 OK status if authentication is successful.
+    - A JSON response with an error message and a 401 Unauthorized status if the username or password is incorrect.
+
+    Note: The function initializes a database session to query the user details and ensures the session is closed after processing the request. It leverages password hashing and token generation for security.
+    """
+
     logging.info(f"Request: {str(request)}")
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')
-    
-    # cursor = mysql.connection.cursor()
-    # cursor.execute("SELECT * FROM users WHERE username = %s", (username,))
-    # user = cursor.fetchone()
-    # cursor.close()
     
     db_session = SessionLocal()
     try:
@@ -87,6 +115,22 @@ def signin():
 @bp.route('/protected', methods=['GET'])
 @jwt_required()
 def protected():
+    """
+    Retrieve the identity of the current user from a protected endpoint.
+
+    This endpoint ('/protected') requires a valid JWT (JSON Web Token) to access. It is intended to demonstrate a protected route that only authenticated users can access. Upon a successful request, it returns the username of the currently authenticated user, indicating the request was made with a valid token.
+
+    The function logs the details of the incoming request and the identity of the user making the request. It responds with the username of the authenticated user and a 200 OK status to indicate successful access to the protected resource.
+
+    Parameters:
+    - None; the function does not take parameters directly but requires a valid JWT in the request's Authorization header.
+
+    Returns:
+    - A JSON response containing the username of the authenticated user and a 200 OK status.
+
+    Note: The `jwt_required()` decorator is used to enforce that this endpoint can only be accessed by requests with a valid JWT. The function logs the request and the result of the authorization check.
+    """
+    
     logging.info(f"Request: {str(request)}")
     current_user = get_jwt_identity()
     logging.info("Request Processed, Response code: 200")
