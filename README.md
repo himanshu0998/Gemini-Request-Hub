@@ -52,7 +52,7 @@ Apart from this The requirements.txt file consists of all the necessary dependen
 
 <h2>Step 5: Setting Up the Database</h2>
 
-The project utilizes <b>SQLAlchemy</b> to establish an <u>ORM (Object-Relational Mapping)</u> based database, which abstracts the MySQL database into Python objects. This approach allows to interact with the database using Pythonic operations rather than writing raw SQL queries. Models for each tables is present in the ```app/models/``` folder.
+The project utilizes <b>SQLAlchemy</b> to establish an <u>ORM (Object-Relational Mapping)</u> based database, which abstracts the MySQL database into Python objects. This approach allows to interact with the database using Pythonic operations rather than writing raw SQL queries. Model for each tables is present in the ```app/models/``` folder.
 
 ```User.py``` - corresponds to the structure of ```users``` table in the database.\
 ```TextInteractions.py``` - corresponds to the structure of ```usertextinteractions``` table in the database.\
@@ -84,14 +84,10 @@ OR
 
 <h2>Documentation</h2>
 
-<ul>
++ The ```API Documentation/``` folder in the root directory of the project holds the details about all the API end points, the expected parameters, the URLs and what does the end point do.\This documentation is a HTML page generated from postman and should be opened in a browser (preferably Google Chrome).\The ```css/``` and ```js/``` folders cater to this HTML page.\The ```Gemini-Request-Hub.postman_collection.json``` file is generated from postman to document all the APIs.
 
-1. The ```API Documentation/``` folder in the root directory of the project holds the details about all the API end points, the expected parameters, the URLs and what does the end point do.
++ Each python file in the project has a description about what is the code in the file, its functionality and usage. I have also added doc strings in each method (or function) throught the project to provide a comprehensive understanding of it.
 
-This documentation is a HTML page generated from postman and should be opened in a browser (preferably Google Chrome). The ```css/``` and ```js/``` folders cater to this HTML page. 
-
-2. Each python file in the project has a description about what is the code in the file, its functionality and usage. I have also added doc strings in each method (or function) throught the project to provide a comprehensive understanding of it.
-</ul>
 
 <h2>Unit Testing</h2>
 
