@@ -1,6 +1,8 @@
 <h1>Gemini-Request-hub</h1>
 
-This is a backend project build on top of freely available Google Gemini APIs which provides prompt, chat and image processsing APIs to its end users which can be further used to integrate with any frontend application as per the requirements. 
+This is a backend system is build on top of freely available Google Gemini APIs and provides API end points for prompt, chat and image processing AI-powered features to its end users which can be further used to integrate with any frontend application as per the requirements.
+
+This system also provides a basic user authentication and authorization to secure the API end points using Flask-JWT.
 
 <h2>Repository Structure:</h2>
 
@@ -9,9 +11,9 @@ Gemini-Request-Hub/\
 ├── app/\
 │   ├──\_\_init\_\_.py\
 │   ├── models/\
-│             ├── User.py\
-│             ├── TextInteractions.py\
-│             └── ImageInteractions.py\
+│             &nbsp;&nbsp;&nbsp;&nbsp;├── User.py\
+│             &nbsp;&nbsp;&nbsp;&nbsp;├── TextInteractions.py\
+│             &nbsp;&nbsp;&nbsp;&nbsp;└── ImageInteractions.py\
 │\
 │── routes/\
 │          ├── auth.py\
@@ -65,12 +67,12 @@ Inorder to setup the database update the ```config.py``` file in the roor direct
 
 Note: The database and the tables would be created when the application is run for the first time with the help of ```SQLAlchemy utils```. <i>The user does not need to explicitly create a database and the tables in it to run the application.</i> 
 
-<h2>Setting up the Gemini API client</h2>
+<h2>Step 6: Setting up the Gemini API client</h2>
 
 API key would be needed inorder to setup the Google gemini client. The api key can be obtained from https://ai.google.dev/ .
 This key should be written as a value of ```API_KEY``` variable in ```config.py``` file.
 
-<h2>Running the Flask Server</h2>
+<h2>Step 7: Running the Flask Server</h2>
 
 To run this server/application run the below command from the root directory of the project
 
@@ -80,17 +82,33 @@ OR
 
 ```python -m flask run```
 
-<h2>API Documentation</h2>
+<h2>Documentation</h2>
 
-The ```API Documentation/``` folder in the root directory of the project holds the details about all the API end points, the expected parameters,
-the URLs and what does the end point do.
+<ul>
 
-This documentation is a HTML page generated from postman and should be opened in a browser (preferably Google Chrome)
+1. The ```API Documentation/``` folder in the root directory of the project holds the details about all the API end points, the expected parameters, the URLs and what does the end point do.
+
+This documentation is a HTML page generated from postman and should be opened in a browser (preferably Google Chrome). The ```css/``` and ```js/``` folders cater to this HTML page. 
+
+2. Each python file in the project has a description about what is the code in the file, its functionality and usage. I have also added doc strings in each method (or function) throught the project to provide a comprehensive understanding of it.
+</ul>
+
+<h2>Unit Testing</h2>
+
+The ```Unit and Integration Tests\``` folder consists of different python based test scripts. Each Python file tests different cases for each API end point in this project.
+
+Inorder to run the any of the script follow the below steps:
+
+In one terminal run the server as mentioned in ```Step 7```
+
+In the second terminal - 
+
+```cd '.\Unit and Integration Tests\'```
+
+```python <file_name>.py```
+
+The output consists of different cases and the response obtained for each of them. This gives a detailed about all the edge cases, exceptions and scenarios.
 
 <h2>Logging</h2>
 
 The ```logs``` folder with ```app.log``` file will hold all the logs of the project. The logging is configured and initialized in the ```app/__init__.py``` using the ```logger_config.py```
-
-<h2>Unit Testing</h2>
-
-
