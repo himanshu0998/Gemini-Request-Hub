@@ -8,30 +8,30 @@ git clone https://github.com/himanshu0998/Gemini-Request-Hub.git
 
 Repository Structure:
 
-Gemini-Request-Hub/
-│
-├── app/
-│   ├── __init__.py
-│   ├── models/
-│   │   ├── User.py
-│   │   ├── TextInteractions.py
-│   │   └── ImageInteractions.py
-│   │
-│   └── routes/
-│       ├── auth.py
-│       ├── image_processing.py
-│       └── text_processing.py
-│
-├── logs/
-│   ├── app.log
-│
-│── api_client.py
-│── config.py
-│── database.py
-│── logger_config.py
-│── run.py
-├── requirements.txt
-└── README.md
+Gemini-Request-Hub/\
+│\
+├── app/\
+│   ├── __init__.py\
+│   ├── models/\
+│   │   ├── User.py\
+│   │   ├── TextInteractions.py\
+│   │   └── ImageInteractions.py\
+│   │\
+│   └── routes/\
+│       ├── auth.py\
+│       ├── image_processing.py\
+│       └── text_processing.py\
+│\
+├── logs/\
+│   ├── app.log\
+│\
+│── api_client.py\
+│── config.py\
+│── database.py\
+│── logger_config.py\
+│── run.py\
+├── requirements.txt\
+└── README.md\
 
 Requirements
 
