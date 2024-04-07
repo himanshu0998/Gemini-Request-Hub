@@ -93,14 +93,14 @@
                                     
                                     <div class="description request-description">
                                         <p><ul>
-<li>The <code>/signup</code> api is used to register the first time user in the database. The user has to register and then sign in to use the other apis.</li>
-<li>The request body contains 2 parameters <code>username</code> and <code>password</code> as shown below.</li>
+<li>The <code>/auth/signup</code> api is used to register the first time user in the database. The user has to register and then sign in to use the other apis.</li>
+<li>
+<p>The request body contains 3 parameters <code>username</code> ,<code>password</code> and <code>emailId</code> as shown below.</p>
+</li>
 <li>
 <p>The username should be unique, not be more than 50 characters and password should be atleast 8 characters long, include atleast 1 uppercase alphabet, 1 lowercase alphabet and 1 number.</p>
 </li>
-<li>
-<p>If the requirements are satified, the server would return a status code 201 response of creation of a user in the database.</p>
-</li>
+<li>If the requirements are satified, the server would return a status code 201 response of creation of a user in the database.</li>
 <li>Else, error response 400 would be thrown.</li>
 </ul></p>
                                     </div>
@@ -113,8 +113,9 @@
                                                   <code>
                                                     
 {
-    "username":"testUser1",
-    "password":"TestPassword1"
+    "username":"testUser11",
+    "password":"TestPassword11",
+    "emailId":"testUser11@gmail.com"
 }
                                                   </code>
                                               </pre>
@@ -151,8 +152,9 @@
 POST http://localhost:5000/auth/signup
 
 {
-    "username":"testUser1",
-    "password":"TestPassword1"
+    "username":"testUser11",
+    "password":"TestPassword11",
+    "emailId":"testUser11@gmail.com"
 }</code>
                                             </pre>
                                         </div>
@@ -325,11 +327,9 @@ POST http://localhost:5000/auth/logout</code>
                                     
                                     <div class="description request-description">
                                         <p><ul>
+<li>This API has a simple use to <code>return the username</code> of the currently logged in user.</li>
 <li>
-<p>This API has a simple use to <code>return the username</code> of the currently logged in user.</p>
-</li>
-<li>
-<p>The request holds a <code>Authorization Bearer token</code> opbtained after successful sign in of the user.</p>
+<p>The request holds a <code>Authorization Bearer token</code> obtained after successful sign in of the user.</p>
 </li>
 <li>
 <p>If the token has experied or incorrect, appropriate error is returned, else the <code>username</code> is returned in the body of the response.</p>
@@ -395,13 +395,13 @@ GET http://localhost:5000/auth/protected</code>
                                     
                                     <div class="description request-description">
                                         <p><ul>
+<li>This API enables the user to send a prompt to the server. The server then further utilises <code>Gemini Pro</code> to process the prompt and the response is then further relayed to the user in the response body of the user.</li>
 <li>
-<p>This API enables the user to send a prompt to the server. The server then further utilises <code>Gemini Pro</code> to process the prompt and the response is then further relayed to the user in the response body of the user.</p>
+<p>The request holds a <code>Authorization Bearer token</code> obtained after successful sign in of the user.</p>
 </li>
 <li>
-<p>The request holds a <code>Authorization Bearer token</code> opbtained after successful sign in of the user.</p>
+<p>The request body takes in 1 parameter <code>prompt</code>the value of which is the user question.</p>
 </li>
-<li>The request body takes in 1 parameter <code>prompt</code>the value of which is the user question.</li>
 <li>Any incorrect or missing paramater would result into appropriate error message with a corresponding status code.</li>
 <li>Upon successfully processing the request, the prompt response is sent back to the user in the response.</li>
 </ul></p>
@@ -486,8 +486,12 @@ POST http://localhost:5000/text/prompt
                                     <div class="description request-description">
                                         <p><ul>
 <li>This API enables the user to send a prompt to the server as part of a chat session. The difference between this and prompt API is that this is more of a chat session taking into account the historical chats of the user in the current session.</li>
-<li>The request holds a <code>Authorization Bearer token</code> opbtained after successful sign in of the user.</li>
-<li>The request body takes in 1 parameter <code>prompt</code>the value of which is the user question.</li>
+<li>
+<p>The request holds a <code>Authorization Bearer token</code> obtained after successful sign in of the user.</p>
+</li>
+<li>
+<p>The request body takes in 1 parameter <code>prompt</code>the value of which is the user question.</p>
+</li>
 <li>Any incorrect or missing paramater would result into appropriate error message with a corresponding status code.</li>
 <li>Upon successfully processing the request, the prompt response is sent back to the user in the response.</li>
 </ul></p>

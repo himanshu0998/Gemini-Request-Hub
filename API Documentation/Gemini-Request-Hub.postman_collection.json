@@ -43,7 +43,8 @@
 							"    pm.expect(pm.response.responseTime).to.be.below(500);",
 							"});"
 						],
-						"type": "text/javascript"
+						"type": "text/javascript",
+						"packages": {}
 					}
 				}
 			],
@@ -52,7 +53,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"testUser1\",\r\n    \"password\":\"TestPassword1\"\r\n}",
+					"raw": "{\r\n    \"username\":\"testUser11\",\r\n    \"password\":\"TestPassword11\",\r\n    \"emailId\":\"testUser11@gmail.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -71,7 +72,7 @@
 						"signup"
 					]
 				},
-				"description": "- The `/signup` api is used to register the first time user in the database. The user has to register and then sign in to use the other apis.\n- The request body contains 2 parameters `username` and `password` as shown below.\n- The username should be unique, not be more than 50 characters and password should be atleast 8 characters long, include atleast 1 uppercase alphabet, 1 lowercase alphabet and 1 number.\n    \n- If the requirements are satified, the server would return a status code 201 response of creation of a user in the database.\n- Else, error response 400 would be thrown."
+				"description": "- The `/auth/signup` api is used to register the first time user in the database. The user has to register and then sign in to use the other apis.\n- The request body contains 3 parameters `username` ,`password` and `emailId` as shown below.\n    \n- The username should be unique, not be more than 50 characters and password should be atleast 8 characters long, include atleast 1 uppercase alphabet, 1 lowercase alphabet and 1 number.\n- If the requirements are satified, the server would return a status code 201 response of creation of a user in the database.\n- Else, error response 400 would be thrown."
 			},
 			"response": []
 		},
@@ -248,7 +249,7 @@
 						"protected"
 					]
 				},
-				"description": "- This API has a simple use to `return the username` of the currently logged in user.\n    \n- The request holds a `Authorization Bearer token` opbtained after successful sign in of the user.\n    \n- If the token has experied or incorrect, appropriate error is returned, else the `username` is returned in the body of the response."
+				"description": "- This API has a simple use to `return the username` of the currently logged in user.\n- The request holds a `Authorization Bearer token` obtained after successful sign in of the user.\n    \n- If the token has experied or incorrect, appropriate error is returned, else the `username` is returned in the body of the response."
 			},
 			"response": []
 		},
@@ -327,7 +328,7 @@
 						"prompt"
 					]
 				},
-				"description": "- This API enables the user to send a prompt to the server. The server then further utilises `Gemini Pro` to process the prompt and the response is then further relayed to the user in the response body of the user.\n    \n- The request holds a `Authorization Bearer token` opbtained after successful sign in of the user.\n- The request body takes in 1 parameter `prompt`the value of which is the user question.\n- Any incorrect or missing paramater would result into appropriate error message with a corresponding status code.\n- Upon successfully processing the request, the prompt response is sent back to the user in the response."
+				"description": "- This API enables the user to send a prompt to the server. The server then further utilises `Gemini Pro` to process the prompt and the response is then further relayed to the user in the response body of the user.\n- The request holds a `Authorization Bearer token` obtained after successful sign in of the user.\n    \n- The request body takes in 1 parameter `prompt`the value of which is the user question.\n- Any incorrect or missing paramater would result into appropriate error message with a corresponding status code.\n- Upon successfully processing the request, the prompt response is sent back to the user in the response."
 			},
 			"response": []
 		},
@@ -405,7 +406,7 @@
 						"chat"
 					]
 				},
-				"description": "- This API enables the user to send a prompt to the server as part of a chat session. The difference between this and prompt API is that this is more of a chat session taking into account the historical chats of the user in the current session.\n- The request holds a `Authorization Bearer token` opbtained after successful sign in of the user.\n- The request body takes in 1 parameter `prompt`the value of which is the user question.\n- Any incorrect or missing paramater would result into appropriate error message with a corresponding status code.\n- Upon successfully processing the request, the prompt response is sent back to the user in the response."
+				"description": "- This API enables the user to send a prompt to the server as part of a chat session. The difference between this and prompt API is that this is more of a chat session taking into account the historical chats of the user in the current session.\n- The request holds a `Authorization Bearer token` obtained after successful sign in of the user.\n    \n- The request body takes in 1 parameter `prompt`the value of which is the user question.\n- Any incorrect or missing paramater would result into appropriate error message with a corresponding status code.\n- Upon successfully processing the request, the prompt response is sent back to the user in the response."
 			},
 			"response": []
 		},

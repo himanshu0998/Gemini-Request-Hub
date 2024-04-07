@@ -22,15 +22,18 @@ def signup():
 
     This endpoint ('/signup') accepts POST requests with JSON content including the username and password for the new account. 
     The function validates the username to ensure it does not exceed 50 characters and validates the password to ensure it meets 
-    complexity requirements (at least 8 characters long, includes at least one uppercase letter, one lowercase letter, and one number). 
+    complexity requirements (at least 8 characters long, includes at least one uppercase letter, one lowercase letter, and one number).
+
     If the validations pass, the password is hashed and the new user is saved to the database.
+
+    It also validates the email id, if it is missing or not in the valid format, proper error is sent as a response.
 
     If any validation fails, an appropriate error message and a 400 Bad Request status are returned. If the user creation process 
     encounters an error, such as a username already existing or a database error, an error message and a 500 Internal Server Error status 
     are returned.
 
     Parameters:
-    - None directly taken; however, the function expects a JSON payload in the request with 'username' and 'password' keys.
+    - None directly taken; however, the function expects a JSON payload in the request with 'username','emailId' and 'password' keys.
 
     Returns:
     - A JSON response with a success message and a 201 Created status if the user is successfully created.
@@ -46,9 +49,19 @@ def signup():
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')
-    # firstname = data.get('firstname')
-    # lastname = data.get('lastname')
-    # emailId = data.get('emailId')
+    emailId = data.get('emailId')
+    email_pattern = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+    
+    # Check emailId validity
+    if not emailId:
+        logging.error("Missing email address, Response Code: 400")
+        return jsonify({"error": "Missing email address"}), 400
+
+
+    if not re.match(email_pattern, emailId):
+        logging.error("Invalid email address format, Response Code: 400")
+        return jsonify({"error": "Invalid email address format"}), 400
+
     # Check username length
     if not username or len(username) > 50:
         logging.error("error\": \"Username must be 50 characters or less, Response Code: 400")
@@ -68,7 +81,7 @@ def signup():
     hashed_password = sha256.hash(password)
     cursor = mysql.connection.cursor()
     try:
-        new_user = User(username=username, password=hashed_password)
+        new_user = User(username=username, emailid = emailId,password=hashed_password)
         db_session.add(new_user)
         db_session.commit()
         logging.info("User Created Successfully!")

@@ -1066,3 +1066,151 @@ WHERE blocklisted_tokens.jti = %(jti_1)s
 2024-04-07 01:49:16,242 - INFO - Token 2d928b95-6288-47fe-8d5e-9e89a2b63d1f blacklisted. Successfully logged out, Response code: 200
 2024-04-07 01:49:16,243 - INFO - 127.0.0.1 - - [07/Apr/2024 01:49:16] "POST /auth/logout HTTP/1.1" 200 -
 2024-04-07 01:49:18,287 - INFO - 127.0.0.1 - - [07/Apr/2024 01:49:18] "[31m[1mPOST /auth/logout HTTP/1.1[0m" 422 -
+2024-04-07 12:58:20,240 - INFO - SELECT DATABASE()
+2024-04-07 12:58:20,241 - INFO - [raw sql] {}
+2024-04-07 12:58:20,243 - INFO - SELECT @@sql_mode
+2024-04-07 12:58:20,243 - INFO - [raw sql] {}
+2024-04-07 12:58:20,243 - INFO - SELECT @@lower_case_table_names
+2024-04-07 12:58:20,245 - INFO - [raw sql] {}
+2024-04-07 12:58:20,245 - INFO - BEGIN (implicit)
+2024-04-07 12:58:20,246 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-07 12:58:20,247 - INFO - [raw sql] {}
+2024-04-07 12:58:20,250 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-07 12:58:20,250 - INFO - [raw sql] {}
+2024-04-07 12:58:20,256 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-07 12:58:20,258 - INFO - [raw sql] {}
+2024-04-07 12:58:20,260 - INFO - DESCRIBE `lucra_backend_project`.`blocklisted_tokens`
+2024-04-07 12:58:20,262 - INFO - [raw sql] {}
+2024-04-07 12:58:20,266 - INFO - 
+CREATE TABLE users (
+	username VARCHAR(50) NOT NULL, 
+	emailid VARCHAR(200) NOT NULL, 
+	password VARCHAR(200) NOT NULL, 
+	PRIMARY KEY (username), 
+	UNIQUE (username)
+)
+
+
+2024-04-07 12:58:20,269 - INFO - [no key 0.00301s] {}
+2024-04-07 12:58:20,300 - INFO - COMMIT
+2024-04-07 12:58:22,017 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-07 12:58:22,017 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-07 12:58:46,912 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-07 12:58:46,943 - INFO - BEGIN (implicit)
+2024-04-07 12:58:46,945 - INFO - INSERT INTO users (username, emailid, password) VALUES (%(username)s, %(emailid)s, %(password)s)
+2024-04-07 12:58:46,946 - INFO - [generated in 0.00099s] {'username': 'testUser101', 'emailid': 'testUser@abc.com', 'password': '$pbkdf2-sha256$29000$gtD6vzfGuBfiXCtF6H2P8Q$jseJn12sXzWWrbnCTvayJKLQqpYSDifUE75AAfSraIY'}
+2024-04-07 12:58:46,950 - INFO - COMMIT
+2024-04-07 12:58:46,954 - INFO - User Created Successfully!
+2024-04-07 12:58:46,954 - INFO - Request Processed, Response code: 201
+2024-04-07 12:58:46,955 - INFO - 127.0.0.1 - - [07/Apr/2024 12:58:46] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 201 -
+2024-04-07 12:58:49,012 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-07 12:58:49,012 - ERROR - Exception on /auth/signup [POST]
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "D:\Rutgers\Lucra\Gemini-Request-Hub\app\routes\auth.py", line 56, in signup
+    if not re.match(email_pattern, emailId):
+  File "C:\Python310\lib\re.py", line 190, in match
+    return _compile(pattern, flags).match(string)
+TypeError: expected string or bytes-like object
+2024-04-07 12:58:49,016 - INFO - 127.0.0.1 - - [07/Apr/2024 12:58:49] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 500 -
+2024-04-07 12:58:51,062 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-07 12:58:51,063 - ERROR - error": "Password must be at least 8 characters long, include 1 capital letter, 1 lowercase letter, and 1 number, Response Code: 400
+2024-04-07 12:58:51,064 - INFO - 127.0.0.1 - - [07/Apr/2024 12:58:51] "[31m[1mPOST /auth/signup HTTP/1.1[0m" 400 -
+2024-04-07 12:58:53,129 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-07 12:58:53,129 - ERROR - error": "Password must be at least 8 characters long, include 1 capital letter, 1 lowercase letter, and 1 number, Response Code: 400
+2024-04-07 12:58:53,130 - INFO - 127.0.0.1 - - [07/Apr/2024 12:58:53] "[31m[1mPOST /auth/signup HTTP/1.1[0m" 400 -
+2024-04-07 13:02:33,946 - INFO - SELECT DATABASE()
+2024-04-07 13:02:33,946 - INFO - [raw sql] {}
+2024-04-07 13:02:33,948 - INFO - SELECT @@sql_mode
+2024-04-07 13:02:33,949 - INFO - [raw sql] {}
+2024-04-07 13:02:33,950 - INFO - SELECT @@lower_case_table_names
+2024-04-07 13:02:33,950 - INFO - [raw sql] {}
+2024-04-07 13:02:33,952 - INFO - BEGIN (implicit)
+2024-04-07 13:02:33,953 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-07 13:02:33,953 - INFO - [raw sql] {}
+2024-04-07 13:02:33,956 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-07 13:02:33,957 - INFO - [raw sql] {}
+2024-04-07 13:02:33,959 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-07 13:02:33,960 - INFO - [raw sql] {}
+2024-04-07 13:02:33,963 - INFO - DESCRIBE `lucra_backend_project`.`blocklisted_tokens`
+2024-04-07 13:02:33,964 - INFO - [raw sql] {}
+2024-04-07 13:02:33,966 - INFO - COMMIT
+2024-04-07 13:02:34,875 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-07 13:02:34,876 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-07 13:02:58,789 - INFO - SELECT DATABASE()
+2024-04-07 13:02:58,790 - INFO - [raw sql] {}
+2024-04-07 13:02:58,791 - INFO - SELECT @@sql_mode
+2024-04-07 13:02:58,792 - INFO - [raw sql] {}
+2024-04-07 13:02:58,792 - INFO - SELECT @@lower_case_table_names
+2024-04-07 13:02:58,793 - INFO - [raw sql] {}
+2024-04-07 13:02:58,794 - INFO - BEGIN (implicit)
+2024-04-07 13:02:58,795 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-07 13:02:58,796 - INFO - [raw sql] {}
+2024-04-07 13:02:58,801 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-07 13:02:58,802 - INFO - [raw sql] {}
+2024-04-07 13:02:58,805 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-07 13:02:58,806 - INFO - [raw sql] {}
+2024-04-07 13:02:58,808 - INFO - DESCRIBE `lucra_backend_project`.`blocklisted_tokens`
+2024-04-07 13:02:58,809 - INFO - [raw sql] {}
+2024-04-07 13:02:58,813 - INFO - 
+CREATE TABLE users (
+	username VARCHAR(50) NOT NULL, 
+	emailid VARCHAR(200) NOT NULL, 
+	password VARCHAR(200) NOT NULL, 
+	PRIMARY KEY (username), 
+	UNIQUE (username)
+)
+
+
+2024-04-07 13:02:58,815 - INFO - [no key 0.00243s] {}
+2024-04-07 13:02:58,833 - INFO - COMMIT
+2024-04-07 13:02:59,728 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-07 13:02:59,728 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-07 13:03:06,923 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-07 13:03:06,949 - INFO - BEGIN (implicit)
+2024-04-07 13:03:06,951 - INFO - INSERT INTO users (username, emailid, password) VALUES (%(username)s, %(emailid)s, %(password)s)
+2024-04-07 13:03:06,952 - INFO - [generated in 0.00116s] {'username': 'testUser1', 'emailid': 'testUser@abc.com', 'password': '$pbkdf2-sha256$29000$fM8Zw/gfI2SMsdZai5FSCg$07A3rkRcAOUjUUWzZYHbv0NWryhmuz5i476nS5DlQEo'}
+2024-04-07 13:03:06,966 - INFO - COMMIT
+2024-04-07 13:03:06,969 - INFO - User Created Successfully!
+2024-04-07 13:03:06,970 - INFO - Request Processed, Response code: 201
+2024-04-07 13:03:06,971 - INFO - 127.0.0.1 - - [07/Apr/2024 13:03:06] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 201 -
+2024-04-07 13:03:09,004 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-07 13:03:09,025 - INFO - BEGIN (implicit)
+2024-04-07 13:03:09,026 - INFO - INSERT INTO users (username, emailid, password) VALUES (%(username)s, %(emailid)s, %(password)s)
+2024-04-07 13:03:09,027 - INFO - [cached since 2.076s ago] {'username': 'testUser1', 'emailid': 'testUser@abc.com', 'password': '$pbkdf2-sha256$29000$REjp3bvXmtMaY0zJee8dAw$4yTqeBFNfhUF.kYO0y8nJplCVp6P7ePzCgqgKs/3koI'}
+2024-04-07 13:03:09,029 - INFO - ROLLBACK
+2024-04-07 13:03:09,030 - ERROR - error: (pymysql.err.IntegrityError) (1062, "Duplicate entry 'testUser1' for key 'users.PRIMARY'")
+[SQL: INSERT INTO users (username, emailid, password) VALUES (%(username)s, %(emailid)s, %(password)s)]
+[parameters: {'username': 'testUser1', 'emailid': 'testUser@abc.com', 'password': '$pbkdf2-sha256$29000$REjp3bvXmtMaY0zJee8dAw$4yTqeBFNfhUF.kYO0y8nJplCVp6P7ePzCgqgKs/3koI'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj), Response Code: 500
+2024-04-07 13:03:09,031 - INFO - 127.0.0.1 - - [07/Apr/2024 13:03:09] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 500 -
+2024-04-07 13:03:11,085 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-07 13:03:11,087 - ERROR - error": "Password must be at least 8 characters long, include 1 capital letter, 1 lowercase letter, and 1 number, Response Code: 400
+2024-04-07 13:03:11,090 - INFO - 127.0.0.1 - - [07/Apr/2024 13:03:11] "[31m[1mPOST /auth/signup HTTP/1.1[0m" 400 -
+2024-04-07 13:03:13,151 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-07 13:03:13,153 - ERROR - Invalid email address format, Response Code: 400
+2024-04-07 13:03:13,155 - INFO - 127.0.0.1 - - [07/Apr/2024 13:03:13] "[31m[1mPOST /auth/signup HTTP/1.1[0m" 400 -
+2024-04-07 13:03:15,215 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-07 13:03:15,215 - ERROR - Missing email address, Response Code: 400
+2024-04-07 13:03:15,216 - INFO - 127.0.0.1 - - [07/Apr/2024 13:03:15] "[31m[1mPOST /auth/signup HTTP/1.1[0m" 400 -
+2024-04-07 13:05:00,378 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-07 13:05:00,379 - ERROR - Missing email address, Response Code: 400
+2024-04-07 13:05:00,380 - INFO - 127.0.0.1 - - [07/Apr/2024 13:05:00] "[31m[1mPOST /auth/signup HTTP/1.1[0m" 400 -
+2024-04-07 13:05:08,896 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-07 13:05:08,918 - INFO - BEGIN (implicit)
+2024-04-07 13:05:08,918 - INFO - INSERT INTO users (username, emailid, password) VALUES (%(username)s, %(emailid)s, %(password)s)
+2024-04-07 13:05:08,919 - INFO - [cached since 122s ago] {'username': 'testUser11', 'emailid': 'testUser11@gmail.com', 'password': '$pbkdf2-sha256$29000$nnNOyflfa21NKeXcu7dWSg$QK0t2n9jZ3kdvvzJ9TFNWdWN4corjkYLKjCZ.Kwmp/E'}
+2024-04-07 13:05:08,920 - INFO - COMMIT
+2024-04-07 13:05:08,933 - INFO - User Created Successfully!
+2024-04-07 13:05:08,935 - INFO - Request Processed, Response code: 201
+2024-04-07 13:05:08,935 - INFO - 127.0.0.1 - - [07/Apr/2024 13:05:08] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 201 -
