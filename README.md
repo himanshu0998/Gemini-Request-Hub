@@ -1,4 +1,4 @@
-<h2>Gemini-Request-hub</h2>h2>
+<h2>Gemini-Request-hub</h2>
 
 This is a backend project build on top of freely available Google Gemini APIs which provides prompt, chat and image processsing APIs to its end users which can be further used to integrate with any frontend application as per the requirements. 
 
@@ -44,7 +44,7 @@ Apart from this The requirements.txt file consists of all the necessary dependen
 
 pip install -r requirements.txt
 
-Setting Up the Database
+<h2>Setting Up the Database</h2>
 
 The project utilizes SQLAlchemy to establish an ORM (Object-Relational Mapping) based database, which abstracts the MySQL database into Python objects. This approach allows to interact with the database using Pythonic operations rather than writing raw SQL queries. Models for each tables is present in the 'app/models/' folder.
 
@@ -61,12 +61,12 @@ Inorder to setup the database update the 'config.py' file in the roor directory 
 
 Note: The database and the tables would be created when the application is run for the first time with the help of SQLAlchemy utils. The user does not need to explicitly create a database and the tables in it to run the application. 
 
-Setting up the Gemini API client
+<h2>Setting up the Gemini API client</h2>
 
 API key would be needed inorder to setup the Google gemini client. The api key can be obtained from https://ai.google.dev/ .
 This key should be written as a value of 'API_KEY' variable in 'config.py' file.
 
-Running the flask Server
+<h2>Running the Flask Server</h2>
 
 In order to run this server/application run the below command from the root directory of the project
 
@@ -76,17 +76,17 @@ OR
 
 python -m flask run
 
-API Documentation
+<h2>API Documentation</h2>
 
 The API Documentation folder in the root directory of the project holds the details about all the API end points, the expected parameters,
 the URLs and what does the end point do.
 
 This documentation is a HTML page generated from postman and should be opened in a browser (preferably Google Chrome)
 
-Logging
+<h2>Logging</h2>
 
 The 'logs' folder with 'app.log' file will hold all the logs of the project. The logging is configured and initialized in the 'app/__init__.py' using the 'logger_config.py'
 
-Unit Testing
+<h2>Unit Testing</h2>
 
 
