@@ -59,11 +59,10 @@ The project utilizes <b>SQLAlchemy</b> to establish an <u>ORM (Object-Relational
 ```ImageInteractions.py``` - corresponds to the structure of ```userimageinteractions``` table in the database.
 
 Inorder to setup the database update the ```config.py``` file in the roor directory with the below details:
-
-1. ```MYSQL_USER``` - username of the MySQL database (typically its root)
-2. ```MYSQL_PASSWORD``` - password of the MySQL database
-3. ```MYSQL_DB``` - name of the database
-4. ```MYSQL_HOST``` - hostname (this would be ```localhost```) when running on the local machine.
++ ```MYSQL_USER``` - username of the MySQL database (typically its root)
++ ```MYSQL_PASSWORD``` - password of the MySQL database
++ ```MYSQL_DB``` - name of the database
++ ```MYSQL_HOST``` - hostname (this would be ```localhost```) when running on the local machine.
 
 Note: The database and the tables would be created when the application is run for the first time with the help of ```SQLAlchemy utils```. <i>The user does not need to explicitly create a database and the tables in it to run the application.</i> 
 
@@ -84,12 +83,10 @@ OR
 
 <h2>Documentation</h2>
 
-+ The ```API Documentation/``` folder in the root directory of the project holds the details about all the API end points, the expected parameters, the URLs and what does the end point do.\
-This documentation is a HTML page generated from postman and should be opened in a browser (preferably Google Chrome).\
-
-The ```css/``` and ```js/``` folders cater to this HTML page.\
-
-The ```Gemini-Request-Hub.postman_collection.json``` file is generated from Postman to document all the APIs.
++ The ```API Documentation/``` folder in the root directory of the project holds the details about all the API end points, the expected parameters, the URLs and what does the end point do.
+    + This documentation is a HTML page generated from postman and should be opened in a browser (preferably Google Chrome).
+    + The ```css/``` and ```js/``` folders cater to this HTML page.
+    + The ```Gemini-Request-Hub.postman_collection.json``` file is generated from Postman to document all the APIs.
 
 + Each python file in the project has a description about what is the code in the file, its functionality and usage at the top of the file. I have also added ```doc strings in each method (or function)``` throught the project to provide a comprehensive understanding of it.
 
