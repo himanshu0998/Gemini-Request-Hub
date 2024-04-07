@@ -508,3 +508,249 @@ WHERE users.username = %(username_1)s
 2024-04-06 22:46:34,187 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
  * Running on http://127.0.0.1:5000
 2024-04-06 22:46:34,189 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-06 22:52:48,938 - INFO - SELECT DATABASE()
+2024-04-06 22:52:48,939 - INFO - [raw sql] {}
+2024-04-06 22:52:48,941 - INFO - SELECT @@sql_mode
+2024-04-06 22:52:48,943 - INFO - [raw sql] {}
+2024-04-06 22:52:48,945 - INFO - SELECT @@lower_case_table_names
+2024-04-06 22:52:48,946 - INFO - [raw sql] {}
+2024-04-06 22:52:48,949 - INFO - BEGIN (implicit)
+2024-04-06 22:52:48,951 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-06 22:52:48,953 - INFO - [raw sql] {}
+2024-04-06 22:52:48,960 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-06 22:52:48,961 - INFO - [raw sql] {}
+2024-04-06 22:52:48,967 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-06 22:52:48,970 - INFO - [raw sql] {}
+2024-04-06 22:52:48,975 - INFO - COMMIT
+2024-04-06 22:52:50,186 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-06 22:52:50,187 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-06 22:53:13,524 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-06 22:53:13,586 - INFO - BEGIN (implicit)
+2024-04-06 22:53:13,588 - INFO - INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)
+2024-04-06 22:53:13,588 - INFO - [generated in 0.00085s] {'username': 'testUser1', 'password': '$pbkdf2-sha256$29000$dC4FwHhv7R2jlHIuxbjX.g$sp9WPFeQP3y6ew1P/hrNdZTM0w1EwzpmJOxlfHGFGls'}
+2024-04-06 22:53:13,591 - INFO - ROLLBACK
+2024-04-06 22:53:13,593 - ERROR - error: (pymysql.err.IntegrityError) (1062, "Duplicate entry 'testUser1' for key 'users.PRIMARY'")
+[SQL: INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)]
+[parameters: {'username': 'testUser1', 'password': '$pbkdf2-sha256$29000$dC4FwHhv7R2jlHIuxbjX.g$sp9WPFeQP3y6ew1P/hrNdZTM0w1EwzpmJOxlfHGFGls'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj), Response Code: 500
+2024-04-06 22:53:13,594 - INFO - 127.0.0.1 - - [06/Apr/2024 22:53:13] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 500 -
+2024-04-06 22:53:25,888 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-06 22:53:25,929 - INFO - BEGIN (implicit)
+2024-04-06 22:53:25,931 - INFO - INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)
+2024-04-06 22:53:25,932 - INFO - [cached since 12.34s ago] {'username': 'testUser4', 'password': '$pbkdf2-sha256$29000$b03JWUupNYbQ2rsXIkRoDQ$.Jq01qruPJHJDUf3N8q/mRKrdZKCZPR1hcGexPt.rIo'}
+2024-04-06 22:53:25,935 - INFO - COMMIT
+2024-04-06 22:53:25,980 - INFO - User Created Successfully!
+2024-04-06 22:53:25,982 - INFO - Request Processed, Response code: 201
+2024-04-06 22:53:25,983 - INFO - 127.0.0.1 - - [06/Apr/2024 22:53:25] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 201 -
+2024-04-06 22:56:39,058 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-06 22:56:39,103 - INFO - BEGIN (implicit)
+2024-04-06 22:56:39,105 - INFO - INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)
+2024-04-06 22:56:39,106 - INFO - [cached since 205.5s ago] {'username': 'testUser4', 'password': '$pbkdf2-sha256$29000$cG4txfi/1/o/ZyxFyNl7Lw$LOyjk7Sao3j2XYaaeu81agF3m43aAOTFilYrChJEZL0'}
+2024-04-06 22:56:39,108 - INFO - ROLLBACK
+2024-04-06 22:56:39,109 - ERROR - error: (pymysql.err.IntegrityError) (1062, "Duplicate entry 'testUser4' for key 'users.PRIMARY'")
+[SQL: INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)]
+[parameters: {'username': 'testUser4', 'password': '$pbkdf2-sha256$29000$cG4txfi/1/o/ZyxFyNl7Lw$LOyjk7Sao3j2XYaaeu81agF3m43aAOTFilYrChJEZL0'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj), Response Code: 500
+2024-04-06 22:56:39,110 - INFO - 127.0.0.1 - - [06/Apr/2024 22:56:39] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 500 -
+2024-04-06 22:56:41,170 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-06 22:56:41,244 - INFO - BEGIN (implicit)
+2024-04-06 22:56:41,246 - INFO - INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)
+2024-04-06 22:56:41,248 - INFO - [cached since 207.7s ago] {'username': 'testUser1', 'password': '$pbkdf2-sha256$29000$z3mvtXbufS8F4JxTSkkpxQ$EVpc3Dt9vHzIZXAOa66.U8SbevjJqU3Gr1Hm.nDco5E'}
+2024-04-06 22:56:41,251 - INFO - ROLLBACK
+2024-04-06 22:56:41,254 - ERROR - error: (pymysql.err.IntegrityError) (1062, "Duplicate entry 'testUser1' for key 'users.PRIMARY'")
+[SQL: INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)]
+[parameters: {'username': 'testUser1', 'password': '$pbkdf2-sha256$29000$z3mvtXbufS8F4JxTSkkpxQ$EVpc3Dt9vHzIZXAOa66.U8SbevjJqU3Gr1Hm.nDco5E'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj), Response Code: 500
+2024-04-06 22:56:41,258 - INFO - 127.0.0.1 - - [06/Apr/2024 22:56:41] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 500 -
+2024-04-06 22:56:43,305 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-06 22:56:43,307 - ERROR - error": "Password must be at least 8 characters long, include 1 capital letter, 1 lowercase letter, and 1 number, Response Code: 400
+2024-04-06 22:56:43,310 - INFO - 127.0.0.1 - - [06/Apr/2024 22:56:43] "[31m[1mPOST /auth/signup HTTP/1.1[0m" 400 -
+2024-04-06 22:57:01,556 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-06 22:57:01,614 - INFO - BEGIN (implicit)
+2024-04-06 22:57:01,617 - INFO - INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)
+2024-04-06 22:57:01,618 - INFO - [cached since 228s ago] {'username': 'testUser101', 'password': '$pbkdf2-sha256$29000$hzDGOIcwBqDUuve.F8I4Zw$Hs3/bMZNXNnbzdDrBcJT5tGAiTGYvFevVRt7l83BbEg'}
+2024-04-06 22:57:01,622 - INFO - COMMIT
+2024-04-06 22:57:01,671 - INFO - User Created Successfully!
+2024-04-06 22:57:01,673 - INFO - Request Processed, Response code: 201
+2024-04-06 22:57:01,675 - INFO - 127.0.0.1 - - [06/Apr/2024 22:57:01] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 201 -
+2024-04-06 22:57:03,719 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-06 22:57:03,761 - INFO - BEGIN (implicit)
+2024-04-06 22:57:03,763 - INFO - INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)
+2024-04-06 22:57:03,765 - INFO - [cached since 230.2s ago] {'username': 'testUser1', 'password': '$pbkdf2-sha256$29000$P6cUAkAIoZTy3tubs1bq/Q$AU2NV2ygjSKI.oUIEwkDqAFUMft1866tu/eB0ZFaQzs'}
+2024-04-06 22:57:03,767 - INFO - ROLLBACK
+2024-04-06 22:57:03,770 - ERROR - error: (pymysql.err.IntegrityError) (1062, "Duplicate entry 'testUser1' for key 'users.PRIMARY'")
+[SQL: INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)]
+[parameters: {'username': 'testUser1', 'password': '$pbkdf2-sha256$29000$P6cUAkAIoZTy3tubs1bq/Q$AU2NV2ygjSKI.oUIEwkDqAFUMft1866tu/eB0ZFaQzs'}]
+(Background on this error at: https://sqlalche.me/e/20/gkpj), Response Code: 500
+2024-04-06 22:57:03,772 - INFO - 127.0.0.1 - - [06/Apr/2024 22:57:03] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 500 -
+2024-04-06 22:57:05,834 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-06 22:57:05,836 - ERROR - error": "Password must be at least 8 characters long, include 1 capital letter, 1 lowercase letter, and 1 number, Response Code: 400
+2024-04-06 22:57:05,840 - INFO - 127.0.0.1 - - [06/Apr/2024 22:57:05] "[31m[1mPOST /auth/signup HTTP/1.1[0m" 400 -
+2024-04-06 23:01:51,532 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 23:01:51,535 - INFO - BEGIN (implicit)
+2024-04-06 23:01:51,542 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 23:01:51,547 - INFO - [generated in 0.00550s] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-06 23:01:51,582 - INFO - Request Processed, Response code: 200
+2024-04-06 23:01:51,583 - INFO - ROLLBACK
+2024-04-06 23:01:51,584 - INFO - 127.0.0.1 - - [06/Apr/2024 23:01:51] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-06 23:01:53,636 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 23:01:53,638 - INFO - BEGIN (implicit)
+2024-04-06 23:01:53,641 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 23:01:53,643 - INFO - [cached since 2.102s ago] {'username_1': 'testUser102', 'param_1': 1}
+2024-04-06 23:01:53,649 - ERROR - error": "Invalid username or password, Response code: 401
+2024-04-06 23:01:53,651 - INFO - ROLLBACK
+2024-04-06 23:01:53,656 - INFO - 127.0.0.1 - - [06/Apr/2024 23:01:53] "[31m[1mPOST /auth/signin HTTP/1.1[0m" 401 -
+2024-04-06 23:01:55,715 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 23:01:55,716 - INFO - BEGIN (implicit)
+2024-04-06 23:01:55,718 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 23:01:55,720 - INFO - [cached since 4.179s ago] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-06 23:01:55,753 - ERROR - error": "Invalid username or password, Response code: 401
+2024-04-06 23:01:55,754 - INFO - ROLLBACK
+2024-04-06 23:01:55,755 - INFO - 127.0.0.1 - - [06/Apr/2024 23:01:55] "[31m[1mPOST /auth/signin HTTP/1.1[0m" 401 -
+2024-04-06 23:07:43,475 - INFO - Request: <Request 'http://localhost:5000/auth/signup' [POST]>
+2024-04-06 23:07:43,531 - INFO - BEGIN (implicit)
+2024-04-06 23:07:43,532 - INFO - INSERT INTO users (username, password) VALUES (%(username)s, %(password)s)
+2024-04-06 23:07:43,532 - INFO - [cached since 869.9s ago] {'username': 'testUser102', 'password': '$pbkdf2-sha256$29000$B2BMaY1xTqn1nrMWYmytlQ$jBdfEi7Pa0kMCVB7TQ5e.9utA9QtE5QEEDOEY0ztGsQ'}
+2024-04-06 23:07:43,534 - INFO - COMMIT
+2024-04-06 23:07:43,582 - INFO - User Created Successfully!
+2024-04-06 23:07:43,583 - INFO - Request Processed, Response code: 201
+2024-04-06 23:07:43,585 - INFO - 127.0.0.1 - - [06/Apr/2024 23:07:43] "[35m[1mPOST /auth/signup HTTP/1.1[0m" 201 -
+2024-04-06 23:07:45,647 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 23:07:45,651 - INFO - BEGIN (implicit)
+2024-04-06 23:07:45,654 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 23:07:45,660 - INFO - [cached since 354.1s ago] {'username_1': 'testUser102', 'param_1': 1}
+2024-04-06 23:07:45,689 - INFO - Request Processed, Response code: 200
+2024-04-06 23:07:45,690 - INFO - ROLLBACK
+2024-04-06 23:07:45,691 - INFO - 127.0.0.1 - - [06/Apr/2024 23:07:45] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-06 23:10:48,245 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 23:10:48,250 - INFO - BEGIN (implicit)
+2024-04-06 23:10:48,253 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 23:10:48,257 - INFO - [cached since 536.7s ago] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-06 23:10:48,307 - INFO - Request Processed, Response code: 200
+2024-04-06 23:10:48,307 - INFO - ROLLBACK
+2024-04-06 23:10:48,309 - INFO - 127.0.0.1 - - [06/Apr/2024 23:10:48] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-06 23:11:51,768 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 23:11:51,772 - INFO - BEGIN (implicit)
+2024-04-06 23:11:51,775 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 23:11:51,779 - INFO - [cached since 600.2s ago] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-06 23:11:51,829 - INFO - Request Processed, Response code: 200
+2024-04-06 23:11:51,830 - INFO - ROLLBACK
+2024-04-06 23:11:51,831 - INFO - 127.0.0.1 - - [06/Apr/2024 23:11:51] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-06 23:12:57,679 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 23:12:57,680 - INFO - BEGIN (implicit)
+2024-04-06 23:12:57,682 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 23:12:57,683 - INFO - [cached since 666.1s ago] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-06 23:12:57,706 - INFO - Request Processed, Response code: 200
+2024-04-06 23:12:57,706 - INFO - ROLLBACK
+2024-04-06 23:12:57,708 - INFO - 127.0.0.1 - - [06/Apr/2024 23:12:57] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-06 23:20:49,442 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 23:20:49,444 - INFO - BEGIN (implicit)
+2024-04-06 23:20:49,446 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 23:20:49,449 - INFO - [cached since 1138s ago] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-06 23:20:49,497 - INFO - Request Processed, Response code: 200
+2024-04-06 23:20:49,498 - INFO - ROLLBACK
+2024-04-06 23:20:49,500 - INFO - 127.0.0.1 - - [06/Apr/2024 23:20:49] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-06 23:20:51,561 - INFO - Request: <Request 'http://localhost:5000/text/prompt' [POST]>
+2024-04-06 23:20:53,339 - INFO - BEGIN (implicit)
+2024-04-06 23:20:53,586 - INFO - INSERT INTO usertextinteractions (username, input_type, input_content, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_content)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-06 23:20:53,588 - INFO - [generated in 0.00287s] {'username': 'testUser1', 'input_type': 'prompt', 'input_content': 'Best soccer player? Give me 3 names', 'input_timestamp': datetime.datetime(2024, 4, 7, 3, 20, 51, 562426, tzinfo=datetime.timezone.utc), 'output_content': '1. Lionel Messi\n2. Cristiano Ronaldo\n3. Kylian Mbappé', 'output_timestamp': datetime.datetime(2024, 4, 7, 3, 20, 53, 338802, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-06 23:20:53,596 - INFO - COMMIT
+2024-04-06 23:20:53,643 - INFO - Request Processed, Response code: 200
+2024-04-06 23:20:53,646 - INFO - 127.0.0.1 - - [06/Apr/2024 23:20:53] "POST /text/prompt HTTP/1.1" 200 -
+2024-04-06 23:20:55,711 - INFO - 127.0.0.1 - - [06/Apr/2024 23:20:55] "[31m[1mPOST /text/prompt HTTP/1.1[0m" 422 -
+2024-04-06 23:20:57,740 - INFO - Request: <Request 'http://localhost:5000/text/prompt' [POST]>
+2024-04-06 23:20:57,741 - ERROR - error": "No prompt provided, Response Code: 400
+2024-04-06 23:20:57,742 - INFO - 127.0.0.1 - - [06/Apr/2024 23:20:57] "[31m[1mPOST /text/prompt HTTP/1.1[0m" 400 -
+2024-04-06 23:29:34,645 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 23:29:34,648 - INFO - BEGIN (implicit)
+2024-04-06 23:29:34,649 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 23:29:34,650 - INFO - [cached since 1663s ago] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-06 23:29:34,689 - INFO - Request Processed, Response code: 200
+2024-04-06 23:29:34,690 - INFO - ROLLBACK
+2024-04-06 23:29:34,692 - INFO - 127.0.0.1 - - [06/Apr/2024 23:29:34] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-06 23:29:36,738 - INFO - Request: <Request 'http://localhost:5000/text/chat' [POST]>
+2024-04-06 23:29:38,303 - INFO - BEGIN (implicit)
+2024-04-06 23:29:38,306 - INFO - INSERT INTO usertextinteractions (username, input_type, input_content, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_content)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-06 23:29:38,309 - INFO - [cached since 524.7s ago] {'username': 'testUser1', 'input_type': 'chat', 'input_content': 'What is the capital of USA?', 'input_timestamp': datetime.datetime(2024, 4, 7, 3, 29, 36, 739268, tzinfo=datetime.timezone.utc), 'output_content': 'Washington D.C.', 'output_timestamp': datetime.datetime(2024, 4, 7, 3, 29, 38, 301099, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-06 23:29:38,317 - INFO - COMMIT
+2024-04-06 23:29:38,370 - INFO - Request Processed, Response code: 200
+2024-04-06 23:29:38,373 - INFO - 127.0.0.1 - - [06/Apr/2024 23:29:38] "POST /text/chat HTTP/1.1" 200 -
+2024-04-06 23:29:40,432 - INFO - Request: <Request 'http://localhost:5000/text/chat' [POST]>
+2024-04-06 23:29:43,525 - INFO - BEGIN (implicit)
+2024-04-06 23:29:43,527 - INFO - INSERT INTO usertextinteractions (username, input_type, input_content, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_content)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-06 23:29:43,529 - INFO - [cached since 529.9s ago] {'username': 'testUser1', 'input_type': 'chat', 'input_content': 'Where is it located?', 'input_timestamp': datetime.datetime(2024, 4, 7, 3, 29, 40, 433920, tzinfo=datetime.timezone.utc), 'output_content': 'Washington, D.C. is located on the east coast of the United States, between the states of Maryland and Virginia. It is situated on the Potomac River, ... (466 characters truncated) ... buildings, including the White House, the Capitol Building, and the Supreme Court. It is also home to many museums, monuments, and other attractions.', 'output_timestamp': datetime.datetime(2024, 4, 7, 3, 29, 43, 524273, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-06 23:29:43,535 - INFO - COMMIT
+2024-04-06 23:29:43,556 - INFO - Request Processed, Response code: 200
+2024-04-06 23:29:43,558 - INFO - 127.0.0.1 - - [06/Apr/2024 23:29:43] "POST /text/chat HTTP/1.1" 200 -
+2024-04-06 23:29:45,615 - INFO - 127.0.0.1 - - [06/Apr/2024 23:29:45] "[31m[1mPOST /text/chat HTTP/1.1[0m" 422 -
+2024-04-06 23:29:47,676 - INFO - Request: <Request 'http://localhost:5000/text/chat' [POST]>
+2024-04-06 23:29:47,677 - ERROR - error": "No prompt provided, Response Code: 400
+2024-04-06 23:29:47,680 - INFO - 127.0.0.1 - - [06/Apr/2024 23:29:47] "[31m[1mPOST /text/chat HTTP/1.1[0m" 400 -
+2024-04-06 23:53:20,901 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 23:53:20,903 - INFO - BEGIN (implicit)
+2024-04-06 23:53:20,904 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 23:53:20,905 - INFO - [cached since 3089s ago] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-06 23:53:20,924 - INFO - Request Processed, Response code: 200
+2024-04-06 23:53:20,924 - INFO - ROLLBACK
+2024-04-06 23:53:20,926 - INFO - 127.0.0.1 - - [06/Apr/2024 23:53:20] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-06 23:53:26,829 - INFO - BEGIN (implicit)
+2024-04-06 23:53:26,834 - INFO - INSERT INTO userimageinteractions (username, input_type, input_prompt, input_image, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_prompt)s, %(input_image)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-06 23:53:26,837 - INFO - [generated in 0.00364s] {'username': 'testUser1', 'input_type': 'image', 'input_prompt': 'Describe the image in 50 words', 'input_image': b'\xff\xd8\xff\xe0\x00\x10JFIF\x00\x01\x01\x00\x00\x01\x00\x01\x00\x00\xff\xdb\x00C\x00\x08\x06\x06\x07\x06\x05\x08\x07\x07\x07\t\t\x08\n\x0c\x14\r\x0 ... (197948 characters truncated) ... t\xd6\xc0>\xde\'1\xc6%H\xc4;\x86\xf0\x0eX\xd5\xc9\xfc\xcby\xa5\x98\xdb\x99"b0\x08\x00\x81Ut_\xdf4\xe2BX.1\x93\xd2\xac;\xb1\x93\x96<g\x14\x15c\xff\xd9', 'input_timestamp': datetime.datetime(2024, 4, 7, 3, 53, 22, 976576, tzinfo=datetime.timezone.utc), 'output_content': ' A happy family is walking down a rural road. The parents are carrying their two young children on their backs. The sun is setting, and the sky is a warm, golden color. The family is laughing.', 'output_timestamp': datetime.datetime(2024, 4, 7, 3, 53, 26, 827382, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-06 23:53:26,868 - INFO - COMMIT
+2024-04-06 23:53:26,873 - INFO - Request Processed, Response code: 200
+2024-04-06 23:53:26,874 - INFO - 127.0.0.1 - - [06/Apr/2024 23:53:26] "POST /image/process HTTP/1.1" 200 -
+2024-04-06 23:56:37,998 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-06 23:56:38,001 - INFO - BEGIN (implicit)
+2024-04-06 23:56:38,003 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-06 23:56:38,005 - INFO - [cached since 3286s ago] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-06 23:56:38,033 - INFO - Request Processed, Response code: 200
+2024-04-06 23:56:38,034 - INFO - ROLLBACK
+2024-04-06 23:56:38,035 - INFO - 127.0.0.1 - - [06/Apr/2024 23:56:38] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-06 23:56:43,871 - INFO - BEGIN (implicit)
+2024-04-06 23:56:43,874 - INFO - INSERT INTO userimageinteractions (username, input_type, input_prompt, input_image, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_prompt)s, %(input_image)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-06 23:56:43,878 - INFO - [cached since 197s ago] {'username': 'testUser1', 'input_type': 'image', 'input_prompt': 'Describe the image in 50 words', 'input_image': b'\xff\xd8\xff\xe0\x00\x10JFIF\x00\x01\x01\x00\x00\x01\x00\x01\x00\x00\xff\xdb\x00C\x00\x08\x06\x06\x07\x06\x05\x08\x07\x07\x07\t\t\x08\n\x0c\x14\r\x0 ... (197948 characters truncated) ... t\xd6\xc0>\xde\'1\xc6%H\xc4;\x86\xf0\x0eX\xd5\xc9\xfc\xcby\xa5\x98\xdb\x99"b0\x08\x00\x81Ut_\xdf4\xe2BX.1\x93\xd2\xac;\xb1\x93\x96<g\x14\x15c\xff\xd9', 'input_timestamp': datetime.datetime(2024, 4, 7, 3, 56, 40, 89378, tzinfo=datetime.timezone.utc), 'output_content': ' A happy family is walking down a rural road. The parents are carrying their two young children on their backs. The sun is setting, and the sky is a warm, golden color. The family is laughing.', 'output_timestamp': datetime.datetime(2024, 4, 7, 3, 56, 43, 869906, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-06 23:56:43,926 - INFO - COMMIT
+2024-04-06 23:56:43,929 - INFO - Request Processed, Response code: 200
+2024-04-06 23:56:43,930 - INFO - 127.0.0.1 - - [06/Apr/2024 23:56:43] "POST /image/process HTTP/1.1" 200 -
+2024-04-06 23:56:45,977 - ERROR - error": "No image file provided, Response Code: 400
+2024-04-06 23:56:45,979 - INFO - 127.0.0.1 - - [06/Apr/2024 23:56:45] "[31m[1mPOST /image/process HTTP/1.1[0m" 400 -
+2024-04-06 23:56:54,977 - INFO - BEGIN (implicit)
+2024-04-06 23:56:54,980 - INFO - INSERT INTO userimageinteractions (username, input_type, input_prompt, input_image, input_timestamp, output_content, output_timestamp, status) VALUES (%(username)s, %(input_type)s, %(input_prompt)s, %(input_image)s, %(input_timestamp)s, %(output_content)s, %(output_timestamp)s, %(status)s)
+2024-04-06 23:56:54,983 - INFO - [cached since 208.1s ago] {'username': 'testUser1', 'input_type': 'image', 'input_prompt': '', 'input_image': b'\xff\xd8\xff\xe0\x00\x10JFIF\x00\x01\x01\x00\x00\x01\x00\x01\x00\x00\xff\xdb\x00C\x00\x08\x06\x06\x07\x06\x05\x08\x07\x07\x07\t\t\x08\n\x0c\x14\r\x0 ... (197948 characters truncated) ... t\xd6\xc0>\xde\'1\xc6%H\xc4;\x86\xf0\x0eX\xd5\xc9\xfc\xcby\xa5\x98\xdb\x99"b0\x08\x00\x81Ut_\xdf4\xe2BX.1\x93\xd2\xac;\xb1\x93\x96<g\x14\x15c\xff\xd9', 'input_timestamp': datetime.datetime(2024, 4, 7, 3, 56, 48, 504350, tzinfo=datetime.timezone.utc), 'output_content': ' There are many benefits to spending time with your family. Some of the benefits include:\n\n* **Reduced stress:** Spending time with loved ones can  ... (891 characters truncated) ... your family is a great way to improve your physical and mental health. It can also help to strengthen your relationships and create lasting memories.', 'output_timestamp': datetime.datetime(2024, 4, 7, 3, 56, 54, 976409, tzinfo=datetime.timezone.utc), 'status': 'Processed'}
+2024-04-06 23:56:54,999 - INFO - COMMIT
+2024-04-06 23:56:55,001 - INFO - Request Processed, Response code: 200
+2024-04-06 23:56:55,003 - INFO - 127.0.0.1 - - [06/Apr/2024 23:56:55] "POST /image/process HTTP/1.1" 200 -
