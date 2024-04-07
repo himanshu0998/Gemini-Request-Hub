@@ -754,3 +754,248 @@ WHERE users.username = %(username_1)s
 2024-04-06 23:56:54,999 - INFO - COMMIT
 2024-04-06 23:56:55,001 - INFO - Request Processed, Response code: 200
 2024-04-06 23:56:55,003 - INFO - 127.0.0.1 - - [06/Apr/2024 23:56:55] "POST /image/process HTTP/1.1" 200 -
+2024-04-07 00:49:43,923 - INFO - SELECT DATABASE()
+2024-04-07 00:49:43,923 - INFO - [raw sql] {}
+2024-04-07 00:49:43,925 - INFO - SELECT @@sql_mode
+2024-04-07 00:49:43,925 - INFO - [raw sql] {}
+2024-04-07 00:49:43,926 - INFO - SELECT @@lower_case_table_names
+2024-04-07 00:49:43,927 - INFO - [raw sql] {}
+2024-04-07 00:49:43,929 - INFO - BEGIN (implicit)
+2024-04-07 00:49:43,930 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-07 00:49:43,931 - INFO - [raw sql] {}
+2024-04-07 00:49:43,959 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-07 00:49:43,960 - INFO - [raw sql] {}
+2024-04-07 00:49:43,963 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-07 00:49:43,963 - INFO - [raw sql] {}
+2024-04-07 00:49:43,967 - INFO - DESCRIBE `lucra_backend_project`.`blacklisted_tokens`
+2024-04-07 00:49:43,967 - INFO - [raw sql] {}
+2024-04-07 00:49:43,972 - INFO - 
+CREATE TABLE blacklisted_tokens (
+	id INTEGER NOT NULL AUTO_INCREMENT, 
+	jti VARCHAR(512) NOT NULL, 
+	expires_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (jti)
+)
+
+
+2024-04-07 00:49:43,975 - INFO - [no key 0.00315s] {}
+2024-04-07 00:49:44,005 - INFO - COMMIT
+2024-04-07 00:50:00,960 - INFO - SELECT DATABASE()
+2024-04-07 00:50:00,961 - INFO - [raw sql] {}
+2024-04-07 00:50:00,962 - INFO - SELECT @@sql_mode
+2024-04-07 00:50:00,962 - INFO - [raw sql] {}
+2024-04-07 00:50:00,963 - INFO - SELECT @@lower_case_table_names
+2024-04-07 00:50:00,964 - INFO - [raw sql] {}
+2024-04-07 00:50:00,965 - INFO - BEGIN (implicit)
+2024-04-07 00:50:00,966 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-07 00:50:00,967 - INFO - [raw sql] {}
+2024-04-07 00:50:00,969 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-07 00:50:00,970 - INFO - [raw sql] {}
+2024-04-07 00:50:00,972 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-07 00:50:00,973 - INFO - [raw sql] {}
+2024-04-07 00:50:00,975 - INFO - DESCRIBE `lucra_backend_project`.`blacklisted_tokens`
+2024-04-07 00:50:00,976 - INFO - [raw sql] {}
+2024-04-07 00:50:00,981 - INFO - COMMIT
+2024-04-07 00:50:01,842 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-07 00:50:01,843 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-07 00:50:58,997 - INFO - SELECT DATABASE()
+2024-04-07 00:50:58,998 - INFO - [raw sql] {}
+2024-04-07 00:50:58,999 - INFO - SELECT @@sql_mode
+2024-04-07 00:50:59,000 - INFO - [raw sql] {}
+2024-04-07 00:50:59,001 - INFO - SELECT @@lower_case_table_names
+2024-04-07 00:50:59,002 - INFO - [raw sql] {}
+2024-04-07 00:50:59,004 - INFO - BEGIN (implicit)
+2024-04-07 00:50:59,005 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-07 00:50:59,006 - INFO - [raw sql] {}
+2024-04-07 00:50:59,038 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-07 00:50:59,039 - INFO - [raw sql] {}
+2024-04-07 00:50:59,042 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-07 00:50:59,043 - INFO - [raw sql] {}
+2024-04-07 00:50:59,046 - INFO - DESCRIBE `lucra_backend_project`.`blocklisted_tokens`
+2024-04-07 00:50:59,047 - INFO - [raw sql] {}
+2024-04-07 00:50:59,051 - INFO - 
+CREATE TABLE blocklisted_tokens (
+	id INTEGER NOT NULL AUTO_INCREMENT, 
+	jti VARCHAR(512) NOT NULL, 
+	expires_at DATETIME NOT NULL, 
+	PRIMARY KEY (id), 
+	UNIQUE (jti)
+)
+
+
+2024-04-07 00:50:59,055 - INFO - [no key 0.00340s] {}
+2024-04-07 00:50:59,076 - INFO - COMMIT
+2024-04-07 00:50:59,947 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-07 00:50:59,948 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-07 00:51:13,754 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-07 00:51:13,759 - INFO - BEGIN (implicit)
+2024-04-07 00:51:13,762 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-07 00:51:13,762 - INFO - [generated in 0.00089s] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-07 00:51:13,788 - INFO - Request Processed, Response code: 200
+2024-04-07 00:51:13,789 - INFO - ROLLBACK
+2024-04-07 00:51:13,791 - INFO - 127.0.0.1 - - [07/Apr/2024 00:51:13] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-07 00:51:37,604 - ERROR - Exception on /auth/logout [POST]
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python310\lib\site-packages\flask_jwt_extended\view_decorators.py", line 121, in decorator
+    verify_jwt_in_request(optional, fresh, refresh, locations)
+  File "C:\Python310\lib\site-packages\flask_jwt_extended\view_decorators.py", line 69, in verify_jwt_in_request
+    jwt_data, jwt_header, jwt_location = _decode_jwt_from_request(
+  File "C:\Python310\lib\site-packages\flask_jwt_extended\view_decorators.py", line 320, in _decode_jwt_from_request
+    verify_token_not_blocklisted(jwt_header, decoded_token)
+  File "C:\Python310\lib\site-packages\flask_jwt_extended\internal_utils.py", line 37, in verify_token_not_blocklisted
+    if jwt_manager._token_in_blocklist_callback(jwt_header, jwt_data):
+TypeError: check_if_token_in_blocklist() takes 1 positional argument but 2 were given
+2024-04-07 00:51:37,610 - INFO - 127.0.0.1 - - [07/Apr/2024 00:51:37] "[35m[1mPOST /auth/logout HTTP/1.1[0m" 500 -
+2024-04-07 00:56:46,768 - INFO - SELECT DATABASE()
+2024-04-07 00:56:46,769 - INFO - [raw sql] {}
+2024-04-07 00:56:46,770 - INFO - SELECT @@sql_mode
+2024-04-07 00:56:46,771 - INFO - [raw sql] {}
+2024-04-07 00:56:46,772 - INFO - SELECT @@lower_case_table_names
+2024-04-07 00:56:46,773 - INFO - [raw sql] {}
+2024-04-07 00:56:46,773 - INFO - BEGIN (implicit)
+2024-04-07 00:56:46,774 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-07 00:56:46,775 - INFO - [raw sql] {}
+2024-04-07 00:56:46,778 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-07 00:56:46,778 - INFO - [raw sql] {}
+2024-04-07 00:56:46,780 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-07 00:56:46,781 - INFO - [raw sql] {}
+2024-04-07 00:56:46,784 - INFO - DESCRIBE `lucra_backend_project`.`blocklisted_tokens`
+2024-04-07 00:56:46,785 - INFO - [raw sql] {}
+2024-04-07 00:56:46,791 - INFO - COMMIT
+2024-04-07 00:56:47,588 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-07 00:56:47,589 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-07 00:56:58,040 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-07 00:56:58,045 - INFO - BEGIN (implicit)
+2024-04-07 00:56:58,049 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-07 00:56:58,050 - INFO - [generated in 0.00168s] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-07 00:56:58,078 - INFO - Request Processed, Response code: 200
+2024-04-07 00:56:58,079 - INFO - ROLLBACK
+2024-04-07 00:56:58,082 - INFO - 127.0.0.1 - - [07/Apr/2024 00:56:58] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-07 00:57:13,289 - INFO - BEGIN (implicit)
+2024-04-07 00:57:13,291 - INFO - SELECT blocklisted_tokens.id AS blocklisted_tokens_id, blocklisted_tokens.jti AS blocklisted_tokens_jti, blocklisted_tokens.expires_at AS blocklisted_tokens_expires_at 
+FROM blocklisted_tokens 
+WHERE blocklisted_tokens.jti = %(jti_1)s 
+ LIMIT %(param_1)s
+2024-04-07 00:57:13,293 - INFO - [generated in 0.00225s] {'jti_1': '037114bf-e791-4f6c-a822-5d5a2a1de31f', 'param_1': 1}
+2024-04-07 00:57:13,298 - INFO - ROLLBACK
+2024-04-07 00:57:13,299 - ERROR - Exception on /auth/logout [POST]
+Traceback (most recent call last):
+  File "C:\Python310\lib\site-packages\flask\app.py", line 2077, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1525, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1523, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Python310\lib\site-packages\flask\app.py", line 1509, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Python310\lib\site-packages\flask_jwt_extended\view_decorators.py", line 127, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+  File "D:\Rutgers\Lucra\Gemini-Request-Hub\app\routes\auth.py", line 146, in logout
+    jti = get_jti()
+TypeError: get_jti() missing 1 required positional argument: 'encoded_token'
+2024-04-07 00:57:13,303 - INFO - 127.0.0.1 - - [07/Apr/2024 00:57:13] "[35m[1mPOST /auth/logout HTTP/1.1[0m" 500 -
+2024-04-07 00:58:12,114 - INFO - SELECT DATABASE()
+2024-04-07 00:58:12,114 - INFO - [raw sql] {}
+2024-04-07 00:58:12,115 - INFO - SELECT @@sql_mode
+2024-04-07 00:58:12,116 - INFO - [raw sql] {}
+2024-04-07 00:58:12,117 - INFO - SELECT @@lower_case_table_names
+2024-04-07 00:58:12,117 - INFO - [raw sql] {}
+2024-04-07 00:58:12,118 - INFO - BEGIN (implicit)
+2024-04-07 00:58:12,119 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-07 00:58:12,120 - INFO - [raw sql] {}
+2024-04-07 00:58:12,122 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-07 00:58:12,123 - INFO - [raw sql] {}
+2024-04-07 00:58:12,125 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-07 00:58:12,126 - INFO - [raw sql] {}
+2024-04-07 00:58:12,129 - INFO - DESCRIBE `lucra_backend_project`.`blocklisted_tokens`
+2024-04-07 00:58:12,129 - INFO - [raw sql] {}
+2024-04-07 00:58:12,132 - INFO - COMMIT
+2024-04-07 00:58:12,997 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-07 00:58:12,998 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-07 00:58:21,680 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-07 00:58:21,684 - INFO - BEGIN (implicit)
+2024-04-07 00:58:21,687 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-07 00:58:21,689 - INFO - [generated in 0.00161s] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-07 00:58:21,713 - INFO - Request Processed, Response code: 200
+2024-04-07 00:58:21,714 - INFO - ROLLBACK
+2024-04-07 00:58:21,715 - INFO - 127.0.0.1 - - [07/Apr/2024 00:58:21] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-07 00:58:36,454 - INFO - BEGIN (implicit)
+2024-04-07 00:58:36,456 - INFO - SELECT blocklisted_tokens.id AS blocklisted_tokens_id, blocklisted_tokens.jti AS blocklisted_tokens_jti, blocklisted_tokens.expires_at AS blocklisted_tokens_expires_at 
+FROM blocklisted_tokens 
+WHERE blocklisted_tokens.jti = %(jti_1)s 
+ LIMIT %(param_1)s
+2024-04-07 00:58:36,458 - INFO - [generated in 0.00176s] {'jti_1': '4632effd-fba6-4990-a028-633a3f75cd68', 'param_1': 1}
+2024-04-07 00:58:36,461 - INFO - ROLLBACK
+2024-04-07 00:58:36,463 - INFO - 127.0.0.1 - - [07/Apr/2024 00:58:36] "[31m[1mPOST /auth/logout HTTP/1.1[0m" 422 -
+2024-04-07 01:03:51,850 - INFO - SELECT DATABASE()
+2024-04-07 01:03:51,851 - INFO - [raw sql] {}
+2024-04-07 01:03:51,854 - INFO - SELECT @@sql_mode
+2024-04-07 01:03:51,855 - INFO - [raw sql] {}
+2024-04-07 01:03:51,857 - INFO - SELECT @@lower_case_table_names
+2024-04-07 01:03:51,858 - INFO - [raw sql] {}
+2024-04-07 01:03:51,860 - INFO - BEGIN (implicit)
+2024-04-07 01:03:51,861 - INFO - DESCRIBE `lucra_backend_project`.`users`
+2024-04-07 01:03:51,862 - INFO - [raw sql] {}
+2024-04-07 01:03:51,865 - INFO - DESCRIBE `lucra_backend_project`.`usertextinteractions`
+2024-04-07 01:03:51,867 - INFO - [raw sql] {}
+2024-04-07 01:03:51,870 - INFO - DESCRIBE `lucra_backend_project`.`userimageinteractions`
+2024-04-07 01:03:51,871 - INFO - [raw sql] {}
+2024-04-07 01:03:51,874 - INFO - DESCRIBE `lucra_backend_project`.`blocklisted_tokens`
+2024-04-07 01:03:51,875 - INFO - [raw sql] {}
+2024-04-07 01:03:51,878 - INFO - COMMIT
+2024-04-07 01:03:52,689 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-04-07 01:03:52,690 - INFO - [33mPress CTRL+C to quit[0m
+2024-04-07 01:04:00,273 - INFO - Request: <Request 'http://localhost:5000/auth/signin' [POST]>
+2024-04-07 01:04:00,277 - INFO - BEGIN (implicit)
+2024-04-07 01:04:00,280 - INFO - SELECT users.username AS users_username, users.password AS users_password 
+FROM users 
+WHERE users.username = %(username_1)s 
+ LIMIT %(param_1)s
+2024-04-07 01:04:00,282 - INFO - [generated in 0.00280s] {'username_1': 'testUser1', 'param_1': 1}
+2024-04-07 01:04:00,306 - INFO - Request Processed, Response code: 200
+2024-04-07 01:04:00,307 - INFO - ROLLBACK
+2024-04-07 01:04:00,309 - INFO - 127.0.0.1 - - [07/Apr/2024 01:04:00] "POST /auth/signin HTTP/1.1" 200 -
+2024-04-07 01:04:14,561 - INFO - BEGIN (implicit)
+2024-04-07 01:04:14,563 - INFO - SELECT blocklisted_tokens.id AS blocklisted_tokens_id, blocklisted_tokens.jti AS blocklisted_tokens_jti, blocklisted_tokens.expires_at AS blocklisted_tokens_expires_at 
+FROM blocklisted_tokens 
+WHERE blocklisted_tokens.jti = %(jti_1)s 
+ LIMIT %(param_1)s
+2024-04-07 01:04:14,565 - INFO - [generated in 0.00169s] {'jti_1': '93d50bf1-daa3-406d-855b-3be8fd7cbc9c', 'param_1': 1}
+2024-04-07 01:04:14,566 - INFO - ROLLBACK
+2024-04-07 01:04:14,569 - INFO - BEGIN (implicit)
+2024-04-07 01:04:14,572 - INFO - INSERT INTO blocklisted_tokens (jti, expires_at) VALUES (%(jti)s, %(expires_at)s)
+2024-04-07 01:04:14,573 - INFO - [generated in 0.00130s] {'jti': '93d50bf1-daa3-406d-855b-3be8fd7cbc9c', 'expires_at': datetime.datetime(2024, 4, 7, 1, 19)}
+2024-04-07 01:04:14,576 - INFO - COMMIT
+2024-04-07 01:04:14,590 - INFO - Token 93d50bf1-daa3-406d-855b-3be8fd7cbc9c blacklisted. Successfully logged out, Response code: 200
+2024-04-07 01:04:14,591 - INFO - 127.0.0.1 - - [07/Apr/2024 01:04:14] "POST /auth/logout HTTP/1.1" 200 -
+2024-04-07 01:04:38,148 - INFO - BEGIN (implicit)
+2024-04-07 01:04:38,150 - INFO - SELECT blocklisted_tokens.id AS blocklisted_tokens_id, blocklisted_tokens.jti AS blocklisted_tokens_jti, blocklisted_tokens.expires_at AS blocklisted_tokens_expires_at 
+FROM blocklisted_tokens 
+WHERE blocklisted_tokens.jti = %(jti_1)s 
+ LIMIT %(param_1)s
+2024-04-07 01:04:38,151 - INFO - [cached since 23.59s ago] {'jti_1': '93d50bf1-daa3-406d-855b-3be8fd7cbc9c', 'param_1': 1}
+2024-04-07 01:04:38,153 - INFO - ROLLBACK
+2024-04-07 01:04:38,154 - INFO - 127.0.0.1 - - [07/Apr/2024 01:04:38] "[31m[1mPOST /text/prompt HTTP/1.1[0m" 401 -

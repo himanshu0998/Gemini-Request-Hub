@@ -1,30 +1,51 @@
 """
-Initializes and configures the Flask application with MySQL, JWT authentication, and logging.
+    Initializes and returns a Flask application instance configured with necessary extensions, blueprints, and database models.
 
-This module sets up a Flask application integrating several components crucial for a web application: database connection via SQLAlchemy and MySQL, JWT-based authentication for secure endpoints, and a logging system for application-wide logging. It also creates all database tables based on SQLAlchemy models if they don't already exist.
+    This function performs the following key tasks to set up the Flask application:
 
-The Flask application is configured with settings from the `Config` class, and the MySQL and JWT extensions are initialized with the Flask app instance. Additionally, the application's routes are imported and registered using Flask Blueprints, organizing the application into distinct authentication, image processing, and text processing components.
+    1. Creates a Flask application instance.
+    2. Configures the application using settings from the 'Config' class.
+    3. Initializes the MySQL extension with the application for database operations.
+    4. Initializes the JWTManager extension with the application to handle JWT operations, including setting up a callback 
+       for checking if a token is in the blocklist.
+    5. Registers various application blueprints for handling authentication, text processing, and image processing routes.
+    6. Creates all database tables defined in SQLAlchemy models, if they do not already exist, by binding the models to the 
+       specified database engine.
 
-Functions:
-    create_app(): Configures and returns the Flask application instance.
+    Additionally, it configures logging for the application based on a predefined logging configuration.
 
-Usage:
-    This function is intended to be called to initialize the Flask application, typically from an entry point in the project. After the application is returned by `create_app()`, it can be run to serve the web application.
-"""
+    Returns:
+        Flask: The configured Flask application instance ready for use.
+
+    Note:
+        - The JWTManager configuration includes a 'token_in_blocklist_loader' callback that defines how to check if a JWT token is 
+          in the blocklist, effectively enabling token revocation.
+        - Database models must be imported before calling 'Base.metadata.create_all' to ensure SQLAlchemy is aware of them and can 
+          create the necessary tables.
+    """
 
 
 from flask import Flask
 from config import Config
-from database import engine, Base
+from database import engine, Base, SessionLocal
 from flask_mysqldb import MySQL
 from flask_jwt_extended import JWTManager
 from logger_config import setup_logging
 from .models.User import User
 from .models.TextInteractions import UserTextInteractions
 from .models.ImageInteractions import UserImageInteractions
+from .models.BlockListedToken import BlocklistedToken
 
 mysql = MySQL()
 jwt = JWTManager()
+
+@jwt.token_in_blocklist_loader
+def check_if_token_in_blocklist(jwt_header, jwt_payload):
+    jti = jwt_payload["jti"]
+    db_session = SessionLocal()
+    token = db_session.query(BlocklistedToken).filter_by(jti=jti).first()
+    db_session.close()
+    return token is not None
 
 setup_logging()
 
