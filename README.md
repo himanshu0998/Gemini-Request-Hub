@@ -31,11 +31,11 @@ Gemini-Request-Hub/\
 ├── requirements.txt\
 └── README.md
 
-<h2>Step 1: Clone this repository using:</h2>
+<h2>Step 1: Clone this repository</h2>
 
 ```git clone https://github.com/himanshu0998/Gemini-Request-Hub.git```
 
-<h2>Step 2: Navigate to the Project directory:</h2>
+<h2>Step 2: Navigate to the Project directory</h2>
 
 ```cd Gemini-Request-hub```
 
@@ -43,8 +43,10 @@ Gemini-Request-Hub/\
 
 The basic requirements include:
 
-1. ```Python 3.10```
-2. ```MySQL setup on the local machine```
++ ```Python 3.10``` - refer ```https://www.python.org/downloads/```
++ ```MySQL setup on the local machine``` - refer ```https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/```
+
+These should be installed in the local machine for installing any further dependencies.
 
 Apart from this The requirements.txt file consists of all the necessary dependencies required to run this project. These dependencies can be installed by executing the below command:
 
