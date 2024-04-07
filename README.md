@@ -54,10 +54,10 @@ ImageInteractions.py - corresponds to the structure of 'userimageinteractions' t
 
 Inorder to setup the database update the 'config.py' file in the roor directory with the below details:
 
-1. MYSQL_USER - username of the MySQL database (typically its root)
-2. MYSQL_PASSWORD - password of the MySQL database
-3. MYSQL_DB - name of the database
-4. MYSQL_HOST - hostname (this would be 'localhost') when running on the local machine.
+1. ```MYSQL_USER``` - username of the MySQL database (typically its root)
+2. ```MYSQL_PASSWORD``` - password of the MySQL database
+3. ```MYSQL_DB``` - name of the database
+4. ```MYSQL_HOST``` - hostname (this would be 'localhost') when running on the local machine.
 
 Note: The database and the tables would be created when the application is run for the first time with the help of SQLAlchemy utils. The user does not need to explicitly create a database and the tables in it to run the application. 
 
@@ -68,7 +68,7 @@ This key should be written as a value of 'API_KEY' variable in 'config.py' file.
 
 <h2>Running the Flask Server</h2>
 
-In order to run this server/application run the below command from the root directory of the project
+To run this server/application run the below command from the root directory of the project
 
 ```flask run```
 
