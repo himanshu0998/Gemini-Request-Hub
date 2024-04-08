@@ -20,9 +20,9 @@ This class is intended to be instantiated or directly accessed to retrieve confi
 
 import secrets
 class Config:
-    MYSQL_USER = 'root'
-    MYSQL_PASSWORD = 'himanshu123'
-    MYSQL_DB = 'lucra_backend_project'
-    MYSQL_HOST = 'localhost'
+    MYSQL_USER = '<user_name>'
+    MYSQL_PASSWORD = '<password>'
+    MYSQL_DB = '<mysql db name>'
+    MYSQL_HOST = '<hostname>'
     JWT_SECRET_KEY = secrets.token_hex(24)
-    API_KEY = 'AIzaSyBUx2njqnTUtvTmW-Uomv71nntTKE1eHDo'
+    API_KEY = '<Gemini API key>'
